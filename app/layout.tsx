@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { IBM_Plex_Sans } from 'next/font/google'
 import '@/styles/globals.css'
+import CookieBanner from '@/app/components/CookieBanner'
 
 const ibmPlex = IBM_Plex_Sans({
   subsets: ['latin'],
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="de" className={ibmPlex.variable}>
       <body className="bg-base text-on-dark font-[family-name:var(--font-body)]">
         {children}
+        <CookieBanner />
       </body>
     </html>
   )
