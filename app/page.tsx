@@ -1,20 +1,21 @@
 import FAQAccordion from '@/app/components/FAQAccordion'
 import ContactForm from '@/app/components/ContactForm'
+import Image from 'next/image'
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const valueProps = [
-  'Fortgeschrittene erweitern ihr Repertoire 3–4× schneller durch gezieltes Üben',
-  'Timing und Kontrolle: messbare Verbesserung in jeder Einheit',
-  'Konkrete Übungsstrategien, die zu Hause sofort anwendbar sind',
-  'Klarer Einstieg auch für absolute Anfänger — kein Vorwissen nötig',
-  'Strukturierte Trainingslogik: jede Stunde baut auf der vorigen auf',
+  'Erfahrene Drummer erweitern ihr Repertoire im Schlagzeugunterricht deutlich – oft um das Drei- bis Vierfache.',
+  'Stabileres Timing und bessere Kontrolle bei komplexen Grooves und Fills, direkt an deinen Zielen ausgerichtet.',
+  'Effiziente Übestrategien, die dich schneller an deine persönlichen Ziele bringen.',
+  'Anfänger bekommen einen klaren Einstieg und lernen schnell Grundbeats und erste Songs.',
+  'Klare Trainingslogik statt Zufallsstunden – jeder Schritt führt dich näher an deine Ziele.',
 ]
 
 const pillars = [
   {
-    title: 'Fokus auf Wirkung',
-    desc: 'Keine leere Theorie. Jede Einheit hat ein konkretes Ziel — du hörst und fühlst den Unterschied.',
+    title: 'Fokus auf das, was dich am meisten voran bringt',
+    desc: 'Ich richte den Schlagzeugunterricht nach deinem aktuellen Level aus und wir arbeiten gezielt an den Punkten, die dich am meisten bremsen. So erreichst du deine Ziele schneller und machst spürbare technische Fortschritte.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.5" />
@@ -25,7 +26,7 @@ const pillars = [
   },
   {
     title: 'Verständliche Erklärungen',
-    desc: 'Komplexe Technik wird greifbar — egal ob du Anfänger oder Fortgeschrittener bist.',
+    desc: 'Ich erkläre jede Übung so, dass du genau verstehst, warum sie funktioniert und wie du sie richtig anwendest – klar, logisch und sofort nutzbar für deine Ziele.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
@@ -35,8 +36,8 @@ const pillars = [
     ),
   },
   {
-    title: 'Individuelle Zielorientierung',
-    desc: 'Dein Tempo, deine Musik, deine Ziele. Der Unterricht passt sich dir an — nicht umgekehrt.',
+    title: 'Individuelle Ziele',
+    desc: 'Ob Band, Songs, Technik oder freies Spiel: Der Unterricht richtet sich klar nach deinen persönlichen Zielen aus. So erreichst du zuverlässig das, was du dir vorgenommen hast – egal ob Anfänger oder Fortgeschrittener.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="currentColor" strokeWidth="1.5" />
@@ -48,79 +49,162 @@ const pillars = [
 
 const courses = [
   {
-    title: 'Schlagzeug Fortgeschrittene',
-    desc: 'Repertoire, Timing-Tiefe, Genre-Erweiterung. Für Schlagzeuger mit Grundkenntnissen, die den nächsten Level erreichen wollen.',
-    tag: 'Fortgeschrittene',
+    tag: 'FÜR FORTGESCHRITTENE',
+    title: 'Schlagzeug für Fortgeschrittene',
+    desc: 'Für Drummer, die bereits Erfahrung haben und gezielt an ihren Zielen arbeiten wollen. Wir gehen an Technik, Timing, Grooves und Songs auf professionellem Niveau – genau dort, wo du bisher feststeckst.',
+    features: [
+      'Techniken und Rhythmen sauber beherrschen, die du schon lange verbessern wolltest',
+      'Übestrategien, mit denen du Songs deutlich schneller sicher spielst',
+      'Neues Song-Repertoire in kurzer Zeit aufbauen',
+      'Timing-Training, das Stabilität und Zuverlässigkeit spürbar erhöht',
+    ],
   },
   {
-    title: 'Schlagzeug Anfänger',
-    desc: 'Strukturierter Einstieg von Null. Koordination, Grundrhythmen, erstes Spielen. Kein Vorwissen nötig.',
-    tag: 'Anfänger',
+    tag: 'FÜR ANFÄNGER',
+    title: 'Schlagzeug für Anfänger',
+    desc: 'Für alle, die neu am Set sind oder das Instrument ausprobieren wollen. Wir starten mit leichten Beats, bauen Schritt für Schritt Grundlagen auf und du bekommst sofort ein sicheres Gefühl für den Schlagzeugunterricht.',
+    features: [
+      'Deine ersten Grundbeats, die du stabil spielen kannst – in Rock, Pop oder deinem Lieblingsstil',
+      'Songs begleiten – schneller, als du erwartest',
+      'Einführung in Stockhaltung, Sitzposition und Spieltechnik',
+      'Erste Fill-Ins, logisch aufgebaut und leicht verständlich',
+    ],
     featured: true,
   },
   {
-    title: 'Klavier Anfänger',
-    desc: 'Harmonische Grundlagen, einfache Melodien und ein Gefühl für Musik — ideal als Ergänzung zum Schlagzeug.',
-    tag: 'Klavier',
+    tag: 'FÜR ANFÄNGER',
+    title: 'Klavier für Anfänger (mein Zweitinstrument)',
+    desc: 'Für Anfänger, Kinder und Erwachsene, die Klavier ohne klassischen Druck lernen wollen. Modern erklärt, praxisnah und ideal, um Songs zu begleiten oder musikalisch einzusteigen.',
+    features: [
+      'Sicheres Notenlesen von Anfang an',
+      'Akkorde spielen, um Lieder zu begleiten',
+      'Klar erklärte Grundlagen der Klaviertechnik',
+      'Wunschlieder in einer Schwierigkeit, die zu deinem Level passt',
+    ],
   },
 ]
 
 const pricing = [
-  { label: 'Anfänger Schlagzeug', duration: '30 min', price: '86', unit: '/Monat' },
-  { label: 'Erfahrene Schlagzeug', duration: '45 min', price: '129', unit: '/Monat', featured: true },
-  { label: 'Fortgeschrittene Schlagzeug', duration: '60 min', price: '172', unit: '/Monat' },
-  { label: 'Anfänger Klavier', duration: '30 min', price: '86', unit: '/Monat' },
-  { label: 'Flex Card', duration: '2 Std.', price: '125', unit: 'gesamt', flex: true },
-  { label: 'Flex Card', duration: '5 Std.', price: '305', unit: 'gesamt', flex: true },
-  { label: 'Flex Card', duration: '10 Std.', price: '595', unit: 'gesamt', flex: true },
+  {
+    title: 'Schlagzeug für Anfänger (30 Min.)',
+    desc: 'Perfekt für alle, die Schlagzeug ausprobieren möchten oder einen einfachen, klar strukturierten Einstieg suchen.',
+    price: '86',
+    billingNote: 'Monatliche Abrechnung · Vertrag',
+    durationNote: '1× 30 Min. Unterricht pro Woche',
+    features: [
+      'Erste einfache Beats, die sofort funktionieren',
+      'Notenlesen und grundlegendes Verständnis – Schritt für Schritt',
+      'Kleine Übungen mit schnellen Erfolgserlebnissen',
+      'Erste Songs in einer angepassten, leicht spielbaren Version',
+    ],
+  },
+  {
+    title: 'Schlagzeug für Erfahrene (45 Min.)',
+    desc: 'Ideal für Spieler, die bereits Grundlagen sicher beherrschen und spürbar weiterkommen wollen. Mehr Zeit, mehr Fokus, mehr Fortschritt.',
+    price: '129',
+    billingNote: 'Monatliche Abrechnung · Vertrag',
+    durationNote: '1× 45 Min. Unterricht pro Woche',
+    features: [
+      'Vertieftes Arbeiten an Songs, Rhythmen und Technik',
+      'Koordination und Timing gezielt verbessern',
+      'Inhalte flexibel an dein aktuelles Level angepasst',
+    ],
+    featured: true,
+  },
+  {
+    title: 'Schlagzeug für Fortgeschrittene (60 Min.)',
+    desc: 'Für Drummer, die gezielt an Technik, Timing, Präzision und anspruchsvolleren Songs arbeiten möchten.',
+    price: '172',
+    billingNote: 'Monatliche Abrechnung · Vertrag',
+    durationNote: '1× 60 Min. Unterricht pro Woche',
+    features: [
+      'Anspruchsvolle Grooves, Fills und Songteile sauber erarbeiten',
+      'Übungen, die Technik, Kontrolle und Timing hörbar verbessern',
+      'Tipps für Bandspiel & Entwicklung eines eigenen, sicheren Stils',
+      'Anleitung zum selbstständigen Erarbeiten von Songs in jedem Level',
+    ],
+  },
+  {
+    title: 'Klavier für Anfänger',
+    desc: 'Für Anfänger, Kinder und Erwachsene, die Klavier ohne den starren Klassikunterricht lernen möchten.',
+    price: '86',
+    billingNote: 'Monatliche Abrechnung · Vertrag',
+    durationNote: '1× 30 Min. Unterricht pro Woche',
+    features: [
+      'Leichtes Notenlesen mit schnellen Erfolgserlebnissen',
+      'Akkorde lernen zum Begleiten deiner Lieblingslieder',
+      'Grundlagen für Technik, Anschlag und Spielfluss',
+    ],
+  },
+]
+
+const flexCards = [
+  { hours: '2 Stunden', price: '125' },
+  { hours: '5 Stunden', price: '305' },
+  { hours: '10 Stunden', price: '595' },
 ]
 
 const steps = [
   {
-    num: '01',
-    title: 'Einschätzung',
-    desc: 'Wir besprechen deine Ziele, dein Level und was du aus dem Unterricht mitnehmen möchtest.',
+    num: '1',
+    title: 'Persönliches Kennenlernen',
+    desc: 'Wir schauen uns an, wo du aktuell stehst – ob fortgeschritten mit klaren Technik- oder Timing-Zielen oder kompletter Anfänger. Du sagst mir, welche Ziele du im Unterricht erreichen möchtest, und ich zeige dir, wie wir dorthin kommen.',
   },
   {
-    num: '02',
-    title: 'Instrument ausprobieren',
-    desc: 'Du setzt dich ans Schlagzeug (oder Klavier) und spielst — ganz ohne Druck und Erwartungen.',
+    num: '2',
+    title: 'Direkter Einstieg am Set',
+    desc: 'Fortgeschrittene bekommen eine kompakte Analyse eines Grooves, Fills oder Timing-Themas – inklusive sofort umsetzbarer Verbesserungen, die dich spürbar voranbringen. Anfänger spielen ihren ersten Beat oder ihre ersten Noten, damit sie gleich ein Gefühl für das Instrument entwickeln.',
   },
   {
-    num: '03',
-    title: 'Unterrichtsform wählen',
-    desc: 'Du entscheidest, welches Paket und Tempo passt. Ich begleite dich ab der ersten richtigen Stunde.',
+    num: '3',
+    title: 'Dein weiterer Fortschritt',
+    desc: 'Nach der Probestunde hast du zwei Möglichkeiten: Entweder wir starten gemeinsam im wöchentlichen Unterricht und arbeiten kontinuierlich an deinen Zielen. Oder du entscheidest dich für eine 2-, 5- oder 10-Stunden-Karte, die du flexibel nach deinem eigenen Zeitplan nutzen kannst – ideal, wenn du variable Zeiten brauchst.',
   },
 ]
+
+// ─── Accent color constants ──────────────────────────────────────────────────
+const ACCENT = '#84A98C'
+const ACCENT_HOVER = '#95B89E'
+const ACCENT_DIM = '#52796F'
+const BASE = '#1E2E34'
+const SURFACE = '#2F3E46'
+const SURFACE_RAISED = '#354F52'
+const TEXT = '#CAD2C5'
+const TEXT_MUTED = '#84A98C'
+const TEXT_SUBTLE = '#52796F'
+const GLASS_BG = 'rgba(202,210,197,0.04)'
+const GLASS_BORDER = 'rgba(202,210,197,0.08)'
+const GLASS_BORDER_HOVER = 'rgba(132,169,140,0.2)'
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0d0c0a] text-[#f5f0e8]">
+    <div className="min-h-screen" style={{ background: BASE, color: TEXT }}>
 
       {/* ── Coming-Soon Banner ───────────────────────────────────────── */}
-      <div className="bg-[rgba(212,168,67,0.08)] border-b border-[rgba(212,168,67,0.15)] px-4 py-2.5 text-center">
-        <p className="text-[#d4a843] text-sm font-medium tracking-wide">
-          ✦ Bald auch als Online-Unterricht verfügbar
+      <div style={{ background: `rgba(132,169,140,0.08)`, borderBottom: `1px solid rgba(132,169,140,0.15)` }} className="px-4 py-2.5 text-center">
+        <p style={{ color: ACCENT }} className="text-sm font-medium tracking-wide">
+          ✦ Bald auch als Online-Unterricht verfügbar – jetzt schon anfragen!
         </p>
       </div>
 
       {/* ── 1. NavBar ────────────────────────────────────────────────── */}
-      <header className="sticky top-0 z-50 bg-[rgba(13,12,10,0.92)] backdrop-blur-md border-b border-[rgba(255,248,235,0.06)]">
+      <header className="sticky top-0 z-50 backdrop-blur-md" style={{ background: `rgba(30,46,52,0.92)`, borderBottom: `1px solid ${GLASS_BORDER}` }}>
         <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="/" className="font-semibold text-[#f5f0e8] tracking-tight text-sm">
+          <a href="/" className="font-semibold tracking-tight text-sm" style={{ color: TEXT }}>
             Manuel Büttner
-            <span className="text-[#d4a843] ml-1">·</span>
+            <span style={{ color: ACCENT }} className="ml-1">·</span>
           </a>
-          <div className="hidden sm:flex items-center gap-8 text-sm text-[#a09880]">
-            <a href="#start" className="hover:text-[#d4a843] transition-colors">Start</a>
-            <a href="#preise" className="hover:text-[#d4a843] transition-colors">Preise</a>
-            <a href="#kontakt" className="hover:text-[#d4a843] transition-colors">Kontakt</a>
+          <div className="hidden sm:flex items-center gap-8 text-sm" style={{ color: TEXT_MUTED }}>
+            <a href="#start" className="transition-colors hover:text-[#CAD2C5]" style={{ color: TEXT_MUTED }}>Start</a>
+            <a href="#preise" className="transition-colors hover:text-[#CAD2C5]" style={{ color: TEXT_MUTED }}>Preise</a>
+            <a href="#kontakt" className="transition-colors hover:text-[#CAD2C5]" style={{ color: TEXT_MUTED }}>Kontakt</a>
           </div>
           <a
             href="#kontakt"
-            className="text-xs font-semibold bg-[#d4a843] text-[#0d0c0a] px-4 py-2 rounded-full hover:bg-[#e8bc55] transition-colors"
+            className="text-xs font-semibold px-4 py-2 rounded-full transition-colors"
+            style={{ background: ACCENT, color: BASE }}
           >
             Probestunde buchen
           </a>
@@ -135,77 +219,79 @@ export default function Home() {
         {/* Background glow */}
         <div
           className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage:
-              'radial-gradient(ellipse 60% 60% at 50% 0%, rgba(212,168,67,0.18) 0%, transparent 70%)',
-          }}
+          style={{ backgroundImage: 'radial-gradient(ellipse 60% 60% at 50% 0%, rgba(132,169,140,0.18) 0%, transparent 70%)' }}
         />
         <div
           className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage:
-              'radial-gradient(circle at 20% 80%, rgba(212,168,67,0.06) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(212,168,67,0.04) 0%, transparent 50%)',
-          }}
+          style={{ backgroundImage: 'radial-gradient(circle at 20% 80%, rgba(132,169,140,0.06) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(132,169,140,0.04) 0%, transparent 50%)' }}
         />
 
         <div className="relative z-10 max-w-3xl mx-auto space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[rgba(212,168,67,0.25)] bg-[rgba(212,168,67,0.06)] text-[#d4a843] text-xs font-medium tracking-widest uppercase">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#d4a843] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium tracking-widest uppercase" style={{ border: `1px solid rgba(132,169,140,0.25)`, background: `rgba(132,169,140,0.06)`, color: ACCENT }}>
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: ACCENT }} />
             29+ Jahre Erfahrung · Darmstadt / Rhein-Main
           </div>
 
-          <h1 className="text-display-xl font-semibold text-[#f5f0e8] tracking-tight leading-[1.0]">
+          <h1 className="text-display-xl font-semibold tracking-tight leading-[1.0]" style={{ color: TEXT }}>
             Schlagzeugunterricht,{' '}
-            <span className="text-[#d4a843]">der dich an</span>
+            <span style={{ color: ACCENT }}>der dich an</span>
             <br />
             deine Ziele bringt
           </h1>
 
-          <p className="text-[#a09880] text-lg max-w-xl mx-auto leading-relaxed">
-            Professioneller Unterricht für Anfänger und Fortgeschrittene. Strukturiert, messbar, individuell — nach deinem Tempo.
+          <p className="text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: TEXT_MUTED }}>
+            In meinem Schlagzeugunterricht arbeiten wir gezielt an deinen persönlichen Zielen – egal ob du Fortgeschrittener oder Anfänger bist. Erfahrene Drummer verbessern Technik, Timing, Kontrolle und ihr Song‒Repertoire spürbar. Anfänger bekommen einen klaren Einstieg mit schnellen Erfolgserlebnissen und einem Gefühl von Fortschritt ab der ersten Stunde.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <a
               href="#kontakt"
-              className="inline-flex items-center gap-2 bg-[#d4a843] text-[#0d0c0a] font-semibold px-8 py-4 rounded-full hover:bg-[#e8bc55] active:scale-[0.98] transition-all shadow-lg shadow-[rgba(212,168,67,0.2)]"
+              className="inline-flex items-center gap-2 font-semibold px-8 py-4 rounded-full active:scale-[0.98] transition-all shadow-lg"
+              style={{ background: ACCENT, color: BASE, boxShadow: `0 8px 24px rgba(132,169,140,0.2)` }}
             >
               Kostenlose Probestunde buchen
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
-            <a href="#preise" className="text-[#a09880] hover:text-[#f5f0e8] text-sm transition-colors underline-offset-4 hover:underline">
+            <a href="#preise" className="text-sm transition-colors underline-offset-4 hover:underline" style={{ color: TEXT_MUTED }}>
               Preise ansehen
             </a>
           </div>
+
+          <p className="text-sm" style={{ color: TEXT_SUBTLE }}>
+            Du hast noch kein Schlagzeug zuhause? Bei mir kannst du auch Schlagzeuge mieten – ich berate dich dazu gerne (gilt auch für Klaviere).{' '}
+            <a href="https://schlagzeugleihen.de" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2" style={{ color: ACCENT }}>
+              Schau mal auf schlagzeugleihen.de
+            </a>
+          </p>
         </div>
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-30">
-          <div className="w-px h-8 bg-[#d4a843]" />
+          <div className="w-px h-8" style={{ background: ACCENT }} />
         </div>
       </section>
 
       {/* ── 3. ValueProps ────────────────────────────────────────────── */}
-      <section className="py-20 bg-[#141210]">
+      <section className="py-20" style={{ background: SURFACE }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="text-[#d4a843] text-xs font-medium tracking-widest uppercase mb-4">Was du bekommst</p>
-              <h2 className="text-display-md font-semibold text-[#f5f0e8] leading-tight">
+              <p className="text-xs font-medium tracking-widest uppercase mb-4" style={{ color: ACCENT }}>Was du bekommst</p>
+              <h2 className="text-display-md font-semibold leading-tight" style={{ color: TEXT }}>
                 Kein Herumirren. Echter Fortschritt.
               </h2>
             </div>
             <ul className="space-y-4">
               {valueProps.map((v, i) => (
                 <li key={i} className="flex items-start gap-4 group">
-                  <span className="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full border border-[rgba(212,168,67,0.4)] flex items-center justify-center">
+                  <span className="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center" style={{ border: `1px solid rgba(132,169,140,0.4)` }}>
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                      <path d="M2 5l2.5 2.5L8 2.5" stroke="#d4a843" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M2 5l2.5 2.5L8 2.5" stroke={ACCENT} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
-                  <p className="text-[#a09880] text-sm leading-relaxed group-hover:text-[#f5f0e8] transition-colors">
+                  <p className="text-sm leading-relaxed" style={{ color: TEXT_MUTED }}>
                     {v}
                   </p>
                 </li>
@@ -216,43 +302,44 @@ export default function Home() {
       </section>
 
       {/* ── 4. Credentials ───────────────────────────────────────────── */}
-      <section className="py-16 border-y border-[rgba(255,248,235,0.06)]">
+      <section className="py-16" style={{ borderTop: `1px solid ${GLASS_BORDER}`, borderBottom: `1px solid ${GLASS_BORDER}` }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-20 text-center">
             <div>
-              <p className="text-[clamp(2.5rem,5vw,4rem)] font-semibold text-[#d4a843] leading-none">29+</p>
-              <p className="text-[#a09880] text-sm mt-2">Jahre Erfahrung</p>
+              <p className="text-[clamp(2.5rem,5vw,4rem)] font-semibold leading-none" style={{ color: ACCENT }}>29+</p>
+              <p className="text-sm mt-2" style={{ color: TEXT_MUTED }}>Jahre Erfahrung Als Schlagzeuger und Lehrer</p>
             </div>
-            <div className="hidden sm:block w-px h-16 bg-[rgba(255,248,235,0.08)]" />
+            <div className="hidden sm:block w-px h-16" style={{ background: GLASS_BORDER }} />
             <div>
-              <p className="text-[#f5f0e8] font-semibold text-lg">Future Music School</p>
-              <p className="text-[#a09880] text-sm mt-1">Schlagzeugstudium</p>
+              <p className="font-semibold text-lg" style={{ color: TEXT }}>Professionelle Ausbildung</p>
+              <p className="text-sm mt-1" style={{ color: TEXT_MUTED }}>Abgeschlossenes Schlagzeugstudium an der Future Music School</p>
             </div>
-            <div className="hidden sm:block w-px h-16 bg-[rgba(255,248,235,0.08)]" />
+            <div className="hidden sm:block w-px h-16" style={{ background: GLASS_BORDER }} />
             <div>
-              <p className="text-[#f5f0e8] font-semibold text-lg">Bands · Orchester</p>
-              <p className="text-[#a09880] text-sm mt-1">Musicalproduktionen</p>
+              <p className="font-semibold text-lg" style={{ color: TEXT }}>Schneller Einstieg für Anfänger</p>
+              <p className="text-sm mt-1" style={{ color: TEXT_MUTED }}>Grundbeats, Fill-Ins und erste Songs in kurzer Zeit</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* ── 5. WhyItWorks ────────────────────────────────────────────── */}
-      <section className="py-24 bg-[#141210]">
+      <section className="py-24" style={{ background: SURFACE }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="text-[#d4a843] text-xs font-medium tracking-widest uppercase mb-4">Methodik</p>
-            <h2 className="text-display-md font-semibold text-[#f5f0e8]">Warum es funktioniert</h2>
+            <p className="text-xs font-medium tracking-widest uppercase mb-4" style={{ color: ACCENT }}>Methodik</p>
+            <h2 className="text-display-md font-semibold" style={{ color: TEXT }}>Warum mein Unterricht funktioniert</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {pillars.map((p, i) => (
               <div
                 key={i}
-                className="bg-[rgba(255,248,235,0.03)] border border-[rgba(255,248,235,0.06)] rounded-2xl p-8 hover:border-[rgba(212,168,67,0.2)] hover:bg-[rgba(212,168,67,0.03)] transition-all group"
+                className="rounded-2xl p-8 transition-all group"
+                style={{ background: GLASS_BG, border: `1px solid ${GLASS_BORDER}` }}
               >
-                <div className="text-[#d4a843] mb-5 group-hover:scale-110 transition-transform inline-block">{p.icon}</div>
-                <h3 className="text-[#f5f0e8] font-semibold text-lg mb-3">{p.title}</h3>
-                <p className="text-[#a09880] text-sm leading-relaxed">{p.desc}</p>
+                <div className="mb-5 inline-block" style={{ color: ACCENT }}>{p.icon}</div>
+                <h3 className="font-semibold text-lg mb-3" style={{ color: TEXT }}>{p.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: TEXT_MUTED }}>{p.desc}</p>
               </div>
             ))}
           </div>
@@ -260,37 +347,48 @@ export default function Home() {
       </section>
 
       {/* ── 6. Courses ───────────────────────────────────────────────── */}
-      <section className="py-24">
+      <section className="py-24" style={{ background: BASE }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="text-[#d4a843] text-xs font-medium tracking-widest uppercase mb-4">Kursangebot</p>
-            <h2 className="text-display-md font-semibold text-[#f5f0e8]">Für jeden das Richtige</h2>
+            <p className="text-xs font-medium tracking-widest uppercase mb-4" style={{ color: ACCENT }}>Kursangebot</p>
+            <h2 className="text-display-md font-semibold" style={{ color: TEXT }}>Unterricht, der dich wirklich voranbringt</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {courses.map((c, i) => (
               <div
                 key={i}
-                className={`relative rounded-2xl p-8 border transition-all ${
-                  c.featured
-                    ? 'bg-[rgba(212,168,67,0.06)] border-[rgba(212,168,67,0.3)] shadow-lg shadow-[rgba(212,168,67,0.08)]'
-                    : 'bg-[rgba(255,248,235,0.03)] border-[rgba(255,248,235,0.06)] hover:border-[rgba(212,168,67,0.15)]'
-                }`}
+                className="relative rounded-2xl p-8 transition-all"
+                style={{
+                  background: c.featured ? `rgba(132,169,140,0.07)` : GLASS_BG,
+                  border: c.featured ? `1px solid rgba(132,169,140,0.35)` : `1px solid ${GLASS_BORDER}`,
+                  boxShadow: c.featured ? `0 8px 32px rgba(132,169,140,0.1)` : 'none',
+                }}
               >
                 {c.featured && (
-                  <span className="absolute -top-3 left-6 text-xs font-semibold bg-[#d4a843] text-[#0d0c0a] px-3 py-1 rounded-full">
+                  <span className="absolute -top-3 left-6 text-xs font-semibold px-3 py-1 rounded-full" style={{ background: ACCENT, color: BASE }}>
                     Beliebt
                   </span>
                 )}
-                <span className="inline-block text-xs text-[#d4a843] font-medium tracking-widest uppercase border border-[rgba(212,168,67,0.25)] px-3 py-1 rounded-full mb-5">
+                <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full mb-5" style={{ color: ACCENT, border: `1px solid rgba(132,169,140,0.25)` }}>
                   {c.tag}
                 </span>
-                <h3 className="text-[#f5f0e8] font-semibold text-xl mb-3">{c.title}</h3>
-                <p className="text-[#a09880] text-sm leading-relaxed mb-6">{c.desc}</p>
+                <h3 className="font-semibold text-xl mb-3" style={{ color: TEXT }}>{c.title}</h3>
+                <p className="text-sm leading-relaxed mb-5" style={{ color: TEXT_MUTED }}>{c.desc}</p>
+                <p className="text-xs font-medium uppercase tracking-widest mb-3" style={{ color: TEXT_SUBTLE }}>Was dich erwartet:</p>
+                <ul className="space-y-2 mb-6">
+                  {c.features.map((f, j) => (
+                    <li key={j} className="flex items-start gap-2 text-sm" style={{ color: TEXT_MUTED }}>
+                      <span className="flex-shrink-0 mt-1 text-xs" style={{ color: ACCENT }}>–</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
                 <a
                   href="#kontakt"
-                  className="text-[#d4a843] text-sm font-medium hover:underline underline-offset-4 inline-flex items-center gap-1"
+                  className="text-sm font-medium underline underline-offset-4 inline-flex items-center gap-1"
+                  style={{ color: ACCENT }}
                 >
-                  Probestunde buchen →
+                  Jetzt Probestunde vereinbaren →
                 </a>
               </div>
             ))}
@@ -299,61 +397,87 @@ export default function Home() {
       </section>
 
       {/* ── 7. Pricing ───────────────────────────────────────────────── */}
-      <section id="preise" className="py-24 bg-[#141210]">
+      <section id="preise" className="py-24" style={{ background: SURFACE }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="text-[#d4a843] text-xs font-medium tracking-widest uppercase mb-4">Preise</p>
-            <h2 className="text-display-md font-semibold text-[#f5f0e8]">Transparent & fair</h2>
-            <p className="text-[#a09880] text-sm mt-3">Alle Preise inkl. MwSt. Monatspreise basieren auf 4 Einheiten.</p>
+            <p className="text-xs font-medium tracking-widest uppercase mb-4" style={{ color: ACCENT }}>Preise</p>
+            <h2 className="text-display-md font-semibold" style={{ color: TEXT }}>Finde deinen perfekten Plan</h2>
           </div>
 
           {/* Monthly plans */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            {pricing.filter((p) => !p.flex).map((p, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+            {pricing.map((p, i) => (
               <div
                 key={i}
-                className={`rounded-2xl p-6 border transition-all ${
-                  p.featured
-                    ? 'bg-[rgba(212,168,67,0.07)] border-[rgba(212,168,67,0.35)] shadow-lg shadow-[rgba(212,168,67,0.1)]'
-                    : 'bg-[rgba(255,248,235,0.03)] border-[rgba(255,248,235,0.07)] hover:border-[rgba(212,168,67,0.15)]'
-                }`}
+                className="rounded-2xl p-6 transition-all flex flex-col"
+                style={{
+                  background: p.featured ? `rgba(132,169,140,0.07)` : GLASS_BG,
+                  border: p.featured ? `1px solid rgba(132,169,140,0.35)` : `1px solid ${GLASS_BORDER}`,
+                  boxShadow: p.featured ? `0 8px 32px rgba(132,169,140,0.1)` : 'none',
+                }}
               >
-                <p className="text-[#a09880] text-xs uppercase tracking-widest mb-1">{p.duration}</p>
-                <p className="text-[#f5f0e8] font-medium text-sm mb-4">{p.label}</p>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-3xl font-semibold text-[#d4a843]">€{p.price}</span>
-                  <span className="text-[#a09880] text-xs">{p.unit}</span>
+                <p className="font-semibold text-sm mb-1" style={{ color: TEXT }}>{p.title}</p>
+                <p className="text-xs leading-relaxed mb-4" style={{ color: TEXT_SUBTLE }}>{p.desc}</p>
+
+                <div className="flex items-baseline gap-1 mb-2">
+                  <span className="text-3xl font-semibold" style={{ color: ACCENT }}>€{p.price}</span>
+                  <span className="text-xs" style={{ color: TEXT_MUTED }}>/Monat</span>
                 </div>
+                <p className="text-xs mb-1" style={{ color: TEXT_SUBTLE }}>{p.billingNote}</p>
+                <p className="text-xs font-medium mb-4" style={{ color: ACCENT }}>{p.durationNote}</p>
+
+                <ul className="space-y-1.5 mb-6 flex-1">
+                  {p.features.map((f, j) => (
+                    <li key={j} className="flex items-start gap-2 text-xs" style={{ color: TEXT_MUTED }}>
+                      <span className="flex-shrink-0 mt-0.5" style={{ color: ACCENT }}>✓</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href="#kontakt"
+                  className="w-full text-center text-xs font-semibold py-2.5 rounded-full transition-colors block"
+                  style={{ background: p.featured ? ACCENT : 'transparent', color: p.featured ? BASE : ACCENT, border: `1px solid rgba(132,169,140,0.35)` }}
+                >
+                  Jetzt buchen
+                </a>
               </div>
             ))}
           </div>
 
           {/* Flex Cards */}
           <div>
-            <p className="text-[#a09880] text-xs uppercase tracking-widest mb-4">Flex Cards — flexibel buchbar, kein Abo</p>
+            <p className="text-sm font-medium mb-2" style={{ color: TEXT }}>Du kannst dich nicht entscheiden oder möchtest dich noch nicht festlegen? Kein Problem!</p>
+            <p className="text-xs uppercase tracking-widest mb-5" style={{ color: TEXT_SUBTLE }}>Flex-Karte für Schlagzeug &amp; Klavier — flexibel buchbar, kein Abo</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {pricing.filter((p) => p.flex).map((p, i) => (
+              {flexCards.map((fc, i) => (
                 <div
                   key={i}
-                  className="bg-[rgba(255,248,235,0.02)] border border-[rgba(255,248,235,0.06)] rounded-xl p-5 flex items-center justify-between hover:border-[rgba(212,168,67,0.15)] transition-all"
+                  className="rounded-xl p-5 flex items-center justify-between transition-all"
+                  style={{ background: GLASS_BG, border: `1px solid ${GLASS_BORDER}` }}
                 >
                   <div>
-                    <p className="text-[#f5f0e8] text-sm font-medium">{p.duration}</p>
-                    <p className="text-[#66604e] text-xs mt-0.5">Flex Card</p>
+                    <p className="text-sm font-medium" style={{ color: TEXT }}>{fc.hours}</p>
+                    <p className="text-xs mt-0.5" style={{ color: TEXT_SUBTLE }}>Flex Card · Bezahlung vorab</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-[#d4a843] font-semibold text-xl">€{p.price}</p>
-                    <p className="text-[#66604e] text-xs">{p.unit}</p>
+                    <p className="font-semibold text-xl" style={{ color: ACCENT }}>€{fc.price}</p>
+                    <p className="text-xs" style={{ color: TEXT_SUBTLE }}>gesamt</p>
                   </div>
                 </div>
               ))}
             </div>
+            <p className="text-xs mt-4" style={{ color: TEXT_SUBTLE }}>
+              Für Schlagzeug und Klavier geeignet · Flexible Terminwahl nach Verfügbarkeit · Inhalte nach deinem Level und deinen Zielen · Optimal zum Einstieg oder für unregelmäßiges Lernen
+            </p>
           </div>
 
           <div className="mt-12 text-center">
             <a
               href="#kontakt"
-              className="inline-flex items-center gap-2 bg-[#d4a843] text-[#0d0c0a] font-semibold px-8 py-4 rounded-full hover:bg-[#e8bc55] transition-all"
+              className="inline-flex items-center gap-2 font-semibold px-8 py-4 rounded-full transition-all"
+              style={{ background: ACCENT, color: BASE }}
             >
               Kostenlose Probestunde buchen →
             </a>
@@ -362,49 +486,50 @@ export default function Home() {
       </section>
 
       {/* ── 8. About ─────────────────────────────────────────────────── */}
-      <section className="py-24">
+      <section className="py-24" style={{ background: BASE }}>
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            {/* Image placeholder */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            {/* Profile image */}
             <div className="relative">
-              <div className="w-full aspect-[4/5] rounded-2xl bg-[rgba(255,248,235,0.04)] border border-[rgba(255,248,235,0.06)] flex items-center justify-center">
-                <div className="text-center text-[#66604e] space-y-2">
-                  <svg viewBox="0 0 48 48" className="w-12 h-12 mx-auto opacity-40" fill="none">
-                    <circle cx="24" cy="18" r="8" stroke="currentColor" strokeWidth="1.5" />
-                    <path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  </svg>
-                  <p className="text-xs">Foto folgt</p>
-                </div>
+              <div className="w-full aspect-[4/5] rounded-2xl overflow-hidden" style={{ border: `1px solid ${GLASS_BORDER}` }}>
+                <Image
+                  src="/profile.jpg"
+                  alt="Manuel Büttner – Schlagzeuglehrer"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
-              {/* Decorative accent */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-2xl bg-[rgba(212,168,67,0.08)] border border-[rgba(212,168,67,0.15)] -z-10" />
+              {/* Badge */}
+              <div className="absolute -bottom-4 left-6 px-4 py-2 rounded-full text-xs font-medium" style={{ background: SURFACE_RAISED, border: `1px solid rgba(132,169,140,0.3)`, color: ACCENT }}>
+                Empfohlen von Schülern ✓
+              </div>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-6 pt-4">
               <div>
-                <p className="text-[#d4a843] text-xs font-medium tracking-widest uppercase mb-4">Über mich</p>
-                <h2 className="text-display-md font-semibold text-[#f5f0e8] leading-tight mb-6">
+                <p className="text-xs font-medium tracking-widest uppercase mb-4" style={{ color: ACCENT }}>Über mich</p>
+                <h2 className="text-display-md font-semibold leading-tight mb-6" style={{ color: TEXT }}>
                   Manuel Büttner
                 </h2>
               </div>
-              <p className="text-[#a09880] leading-relaxed">
-                Seit über 29 Jahren lebe ich Musik — auf der Bühne, im Studio und im Unterrichtsraum. Meine Ausbildung habe ich an der{' '}
-                <strong className="text-[#f5f0e8]">Future Music School</strong> absolviert, wo ich Schlagzeugstudien auf professionellem Niveau betrieben habe.
+              <p className="leading-relaxed" style={{ color: TEXT_MUTED }}>
+                Musik ist für mich mehr als nur spielen können – sie ist Ausdruck, Kontrolle, Sound und der Moment, in dem Technik und Gefühl zusammenkommen. Seit vielen Jahren unterstütze ich fortgeschrittene Schlagzeuger dabei, genau dorthin zu kommen: zu mehr Präzision, besserer Technik und einem Spiel, das sich sicher und souverän anfühlt.
               </p>
-              <p className="text-[#a09880] leading-relaxed">
-                Ich habe in{' '}
-                <strong className="text-[#f5f0e8]">Bands, Orchestern und Musicalproduktionen</strong> gespielt — diese Bühnenpraxis fließt direkt in meinen Unterricht ein. Mir geht es um echte Entwicklung:{' '}
-                <em className="text-[#d4a843] not-italic">Ausdruck, Kontrolle, Sound</em>.
+              <p className="leading-relaxed" style={{ color: TEXT_MUTED }}>
+                Im Unterricht lege ich Wert auf klare Erklärungen und einen ruhigen, strukturierten Ablauf. Du weißt immer, warum wir etwas üben und wie es dich weiterbringt. Saubere Fortschritte und ein gutes Gefühl nach jeder Stunde gehören für mich dazu.
               </p>
-              <div className="flex flex-wrap gap-3 pt-2">
-                {['Schlagzeug', 'Klavier', 'Anfänger', 'Fortgeschrittene', 'Erwachsene', 'Kinder'].map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs text-[#a09880] border border-[rgba(255,248,235,0.08)] px-3 py-1.5 rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <div>
+                <p className="font-semibold mb-2" style={{ color: TEXT }}>Deine musikalische Reise</p>
+                <p className="leading-relaxed text-sm" style={{ color: TEXT_MUTED }}>
+                  Ich begleite dich dabei, dein Schlagzeugspiel gezielt weiterzuentwickeln. Ob komplexere Grooves, saubere Fill-Ins, stabileres Timing oder mehr Kontrolle – wir analysieren gemeinsam, wo du stehst und wie du deine Ziele erreichst. Wir lösen technische Engpässe, verbessern Präzision und erweitern dein Repertoire Schritt für Schritt. Anfänger erhalten einen klaren Einstieg, nachvollziehbare Grundlagen und spürbare erste Erfolge.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold mb-2" style={{ color: TEXT }}>Warum ich unterrichte</p>
+                <p className="leading-relaxed text-sm" style={{ color: TEXT_MUTED }}>
+                  Mich begeistert der Moment, wenn fortgeschrittene Drummer merken, dass Technik, Timing und Kontrolle plötzlich zusammenfallen – dieser „Aha-Moment", der das Spiel auf ein neues Niveau bringt. Nach über 29 Jahren am Schlagzeug, in Bands, Orchestern und Musicalproduktionen ist es mir ein großes Anliegen, Musiker weiterzubringen und ungenutztes Potenzial sichtbar zu machen. Und auch Anfänger unterstütze ich gern dabei, die Grundlagen sauber zu lernen und ihre ersten musikalischen Schritte sicher zu machen.
+                </p>
               </div>
             </div>
           </div>
@@ -412,56 +537,67 @@ export default function Home() {
       </section>
 
       {/* ── 9. TrialProcess ──────────────────────────────────────────── */}
-      <section className="py-24 bg-[#141210]">
+      <section className="py-24" style={{ background: SURFACE }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="text-[#d4a843] text-xs font-medium tracking-widest uppercase mb-4">Ablauf</p>
-            <h2 className="text-display-md font-semibold text-[#f5f0e8]">Die erste Stunde — so einfach</h2>
+            <p className="text-xs font-medium tracking-widest uppercase mb-4" style={{ color: ACCENT }}>DEINE CHANCE</p>
+            <h2 className="text-display-md font-semibold" style={{ color: TEXT }}>Kostenlose Probestunde</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {steps.map((s, i) => (
               <div key={i} className="relative text-center space-y-4">
-                <div className="w-20 h-20 mx-auto rounded-full bg-[rgba(212,168,67,0.07)] border border-[rgba(212,168,67,0.25)] flex items-center justify-center">
-                  <span className="text-[#d4a843] font-semibold text-xl tracking-tight">{s.num}</span>
+                <div className="w-20 h-20 mx-auto rounded-full flex items-center justify-center" style={{ background: `rgba(132,169,140,0.07)`, border: `1px solid rgba(132,169,140,0.25)` }}>
+                  <span className="font-semibold text-xl tracking-tight" style={{ color: ACCENT }}>{s.num}</span>
                 </div>
-                <h3 className="text-[#f5f0e8] font-semibold text-lg">{s.title}</h3>
-                <p className="text-[#a09880] text-sm leading-relaxed max-w-xs mx-auto">{s.desc}</p>
+                <h3 className="font-semibold text-lg" style={{ color: TEXT }}>{s.title}</h3>
+                <p className="text-sm leading-relaxed max-w-xs mx-auto" style={{ color: TEXT_MUTED }}>{s.desc}</p>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-12">
+            <a
+              href="#kontakt"
+              className="inline-flex items-center gap-2 font-semibold px-8 py-4 rounded-full transition-all"
+              style={{ background: ACCENT, color: BASE }}
+            >
+              Jetzt Probestunde sichern →
+            </a>
           </div>
         </div>
       </section>
 
       {/* ── 10. FAQ ──────────────────────────────────────────────────── */}
-      <section className="py-24">
+      <section className="py-24" style={{ background: BASE }}>
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-14">
-            <p className="text-[#d4a843] text-xs font-medium tracking-widest uppercase mb-4">FAQ</p>
-            <h2 className="text-display-md font-semibold text-[#f5f0e8]">Häufige Fragen</h2>
+            <p className="text-xs font-medium tracking-widest uppercase mb-4" style={{ color: ACCENT }}>FAQ</p>
+            <h2 className="text-display-md font-semibold" style={{ color: TEXT }}>Häufig gestellte Fragen</h2>
+            <p className="text-sm mt-3" style={{ color: TEXT_MUTED }}>Hier findest du Antworten auf die wichtigsten Fragen rund um den Unterricht.</p>
           </div>
           <FAQAccordion />
         </div>
       </section>
 
       {/* ── 11. RentalCTA ────────────────────────────────────────────── */}
-      <section className="py-8 px-6">
+      <section className="py-8 px-6" style={{ background: SURFACE }}>
         <div className="max-w-6xl mx-auto">
           <a
             href="https://schlagzeugleihen.de"
             target="_blank"
             rel="noopener noreferrer"
-            className="group block rounded-2xl bg-[rgba(212,168,67,0.06)] border border-[rgba(212,168,67,0.2)] px-8 py-7 hover:bg-[rgba(212,168,67,0.1)] hover:border-[rgba(212,168,67,0.35)] transition-all"
+            className="group block rounded-2xl px-8 py-7 transition-all"
+            style={{ background: `rgba(132,169,140,0.06)`, border: `1px solid rgba(132,169,140,0.2)` }}
           >
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
               <div>
-                <p className="text-[#d4a843] text-xs font-medium uppercase tracking-widest mb-1">Tipp</p>
-                <p className="text-[#f5f0e8] font-semibold text-lg">Schlagzeug oder Klavier mieten</p>
-                <p className="text-[#a09880] text-sm mt-1">
-                  Noch kein eigenes Instrument? Über{' '}
-                  <strong className="text-[#f5f0e8]">schlagzeugleihen.de</strong> kannst du günstig und flexibel mieten.
+                <p className="text-xs font-medium uppercase tracking-widest mb-1" style={{ color: ACCENT }}>Tipp</p>
+                <p className="font-semibold text-lg" style={{ color: TEXT }}>Schlagzeug oder Klavier mieten</p>
+                <p className="text-sm mt-1" style={{ color: TEXT_MUTED }}>
+                  Du hast noch kein eigenes Instrument? Bei mir kannst du auch Schlagzeuge mieten – ich berate dich dazu gerne (gilt auch für Klaviere).{' '}
+                  Schau mal auf <strong style={{ color: TEXT }}>schlagzeugleihen.de</strong>
                 </p>
               </div>
-              <span className="flex-shrink-0 inline-flex items-center gap-1 text-[#d4a843] text-sm font-medium group-hover:gap-2 transition-all">
+              <span className="flex-shrink-0 inline-flex items-center gap-1 text-sm font-medium" style={{ color: ACCENT }}>
                 Zur Verleih-Seite
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -473,26 +609,61 @@ export default function Home() {
       </section>
 
       {/* ── 12. ContactForm ──────────────────────────────────────────── */}
-      <section id="kontakt" className="py-24 bg-[#141210]">
-        <div className="max-w-2xl mx-auto px-6">
+      <section id="kontakt" className="py-24" style={{ background: BASE }}>
+        <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
-            <p className="text-[#d4a843] text-xs font-medium tracking-widest uppercase mb-4">Kontakt</p>
-            <h2 className="text-display-md font-semibold text-[#f5f0e8]">Probestunde anfragen</h2>
-            <p className="text-[#a09880] text-sm mt-3">Kostenlos und unverbindlich. Ich melde mich innerhalb von 24 Stunden.</p>
+            <p className="text-xs font-medium tracking-widest uppercase mb-4" style={{ color: ACCENT }}>Kontakt</p>
+            <h2 className="text-display-md font-semibold" style={{ color: TEXT }}>Probestunde anfragen</h2>
+            <p className="text-sm mt-3" style={{ color: TEXT_MUTED }}>Kostenlos und unverbindlich. Ich melde mich innerhalb von 24 Stunden.</p>
           </div>
-          <div className="bg-[rgba(255,248,235,0.03)] border border-[rgba(255,248,235,0.07)] rounded-2xl p-8">
-            <ContactForm />
+
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+            {/* Location info */}
+            <div className="md:col-span-2 space-y-6">
+              <div>
+                <p className="font-semibold mb-2" style={{ color: TEXT }}>Wo findet Unterricht statt?</p>
+                <p className="text-sm leading-relaxed" style={{ color: TEXT_MUTED }}>
+                  Schlesierstraße 19a<br />
+                  64665 Alsbach-Hähnlein<br />
+                  <span style={{ color: TEXT_SUBTLE }}>Parken an der Straße möglich</span>
+                </p>
+                <p className="text-sm mt-2" style={{ color: TEXT_SUBTLE }}>
+                  Auf Wunsch biete ich Hausbesuche nach Absprache an.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold mb-2" style={{ color: TEXT }}>Schreib mir oder ruf mich an</p>
+                <div className="space-y-2 text-sm" style={{ color: TEXT_MUTED }}>
+                  <p>
+                    <a href="tel:+491703648789" className="underline underline-offset-2" style={{ color: ACCENT }}>
+                      +49 170 3648789
+                    </a>{' '}
+                    <span style={{ color: TEXT_SUBTLE }}>(auch WhatsApp)</span>
+                  </p>
+                  <p>
+                    <a href="mailto:info@manuelbuettner.de" className="underline underline-offset-2" style={{ color: ACCENT }}>
+                      info@manuelbuettner.de
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact form */}
+            <div className="md:col-span-3 rounded-2xl p-8" style={{ background: GLASS_BG, border: `1px solid ${GLASS_BORDER}` }}>
+              <ContactForm />
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── 13. Footer ───────────────────────────────────────────────── */}
-      <footer className="border-t border-[rgba(255,248,235,0.06)] py-10">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[#66604e]">
-          <p>© 2025 Manuel Büttner · Dein Partner für musikalischen Erfolg</p>
+      <footer className="py-10" style={{ borderTop: `1px solid ${GLASS_BORDER}` }}>
+        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm" style={{ color: TEXT_SUBTLE }}>
+          <p>© 2025 Manuel Büttner · Schlagzeug- & Klavierunterricht · Alsbach-Hähnlein</p>
           <div className="flex items-center gap-6">
-            <a href="/impressum" className="hover:text-[#a09880] transition-colors">Impressum</a>
-            <a href="/datenschutz" className="hover:text-[#a09880] transition-colors">Datenschutz</a>
+            <a href="/impressum" className="hover:text-[#84A98C] transition-colors">Impressum</a>
+            <a href="/datenschutz" className="hover:text-[#84A98C] transition-colors">Datenschutz</a>
           </div>
         </div>
       </footer>

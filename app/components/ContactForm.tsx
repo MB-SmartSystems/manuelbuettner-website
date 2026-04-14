@@ -38,18 +38,18 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    'w-full bg-[rgba(255,248,235,0.04)] border border-[rgba(255,248,235,0.08)] rounded-lg px-4 py-3.5 text-[#f5f0e8] text-sm placeholder:text-[#66604e] focus:outline-none focus:border-[#d4a843] focus:bg-[rgba(212,168,67,0.05)] transition-all'
+    'w-full bg-[rgba(202,210,197,0.04)] border border-[rgba(202,210,197,0.10)] rounded-lg px-4 py-3.5 text-[#CAD2C5] text-sm placeholder:text-[#52796F] focus:outline-none focus:border-[#84A98C] focus:bg-[rgba(132,169,140,0.05)] transition-all'
 
   if (status === 'success') {
     return (
       <div className="text-center py-12 space-y-3">
-        <div className="w-14 h-14 mx-auto rounded-full bg-[rgba(212,168,67,0.1)] border border-[rgba(212,168,67,0.3)] flex items-center justify-center">
+        <div className="w-14 h-14 mx-auto rounded-full flex items-center justify-center" style={{ background: 'rgba(132,169,140,0.1)', border: '1px solid rgba(132,169,140,0.3)' }}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M5 12l5 5L20 7" stroke="#d4a843" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M5 12l5 5L20 7" stroke="#84A98C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
-        <p className="text-[#f5f0e8] font-medium">Nachricht erhalten!</p>
-        <p className="text-[#a09880] text-sm">Ich melde mich zeitnah bei dir.</p>
+        <p className="font-medium" style={{ color: '#CAD2C5' }}>Nachricht erhalten!</p>
+        <p className="text-sm" style={{ color: '#84A98C' }}>Ich melde mich zeitnah bei dir.</p>
       </div>
     )
   }
@@ -58,7 +58,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-[#a09880] text-xs mb-2 uppercase tracking-widest">Name *</label>
+          <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: '#84A98C' }}>Name *</label>
           <input
             name="name"
             value={form.name}
@@ -69,7 +69,7 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label className="block text-[#a09880] text-xs mb-2 uppercase tracking-widest">E-Mail *</label>
+          <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: '#84A98C' }}>E-Mail *</label>
           <input
             name="email"
             type="email"
@@ -83,7 +83,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-[#a09880] text-xs mb-2 uppercase tracking-widest">Telefon (optional)</label>
+        <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: '#84A98C' }}>Telefon (optional)</label>
         <input
           name="phone"
           type="tel"
@@ -95,7 +95,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-[#a09880] text-xs mb-2 uppercase tracking-widest">Anfrage-Typ *</label>
+        <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: '#84A98C' }}>Anfrage-Typ *</label>
         <select
           name="type"
           value={form.type}
@@ -117,7 +117,8 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="w-full bg-[#d4a843] text-[#0d0c0a] font-semibold py-4 rounded-lg hover:bg-[#e8bc55] active:scale-[0.99] transition-all disabled:opacity-60 disabled:cursor-not-allowed mt-2"
+        className="w-full font-semibold py-4 rounded-lg active:scale-[0.99] transition-all disabled:opacity-60 disabled:cursor-not-allowed mt-2"
+        style={{ background: '#84A98C', color: '#1E2E34' }}
       >
         {status === 'sending' ? 'Wird gesendet …' : 'Nachricht senden'}
       </button>
