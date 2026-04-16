@@ -3,9 +3,9 @@ import { NextRequest, NextResponse } from 'next/server'
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { name, email, phone, type } = body
+    const { vorname, nachname, email, phone, anliegen } = body
 
-    if (!name || !email || !type) {
+    if (!vorname || !nachname || !email || !anliegen) {
       return NextResponse.json({ error: 'Pflichtfelder fehlen.' }, { status: 400 })
     }
 
@@ -13,10 +13,11 @@ export async function POST(req: NextRequest) {
     // TODO: Replace with nodemailer / Resend / etc. and read credentials from env
     console.log('[Contact Form Submission]', {
       to: 'info@manuelbuettner.de',
-      name,
+      vorname,
+      nachname,
       email,
       phone: phone || '—',
-      type,
+      anliegen,
       timestamp: new Date().toISOString(),
     })
 

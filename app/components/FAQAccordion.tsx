@@ -77,7 +77,7 @@ export default function FAQAccordion() {
               overflow: 'hidden',
             }}
           >
-            <p className="px-6 pb-5 text-sm leading-relaxed" style={{ color: '#84A98C' }}>{faq.a}</p>
+            <p className="px-6 pb-5 text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.72)' }}>{faq.a}</p>
           </div>
         </div>
       ))}

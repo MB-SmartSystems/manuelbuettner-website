@@ -87,7 +87,7 @@ const courses = [
 const pricing = [
   {
     title: 'Schlagzeug für Anfänger (30 Min.)',
-    desc: 'Perfekt für alle, die Schlagzeug ausprobieren möchten oder einen einfachen, klar strukturierten Einstieg suchen.',
+    desc: 'Perfekt für alle, die Schlagzeug ausprobieren möchten oder einen einfachen, klar strukturierten Einstieg suchen. Wir starten mit leichten Beats, bauen erste Grundlagen auf und sorgen dafür, dass du schon in der ersten Stunde ein echtes Erfolgserlebnis hast.',
     price: '86',
     billingNote: 'Monatliche Abrechnung · Vertrag',
     durationNote: '1× 30 Min. Unterricht pro Woche',
@@ -100,7 +100,7 @@ const pricing = [
   },
   {
     title: 'Schlagzeug für Erfahrene (45 Min.)',
-    desc: 'Ideal für Spieler, die bereits Grundlagen sicher beherrschen und spürbar weiterkommen wollen. Mehr Zeit, mehr Fokus, mehr Fortschritt.',
+    desc: 'Ideal für Spieler, die bereits Grundlagen sicher beherrschen und spürbar weiterkommen wollen. Wir vertiefen Technik, Timing, Grooves und Songs – gezielt, strukturiert und abgestimmt auf dein Level. Mehr Zeit, mehr Fokus, mehr Fortschritt.',
     price: '129',
     billingNote: 'Monatliche Abrechnung · Vertrag',
     durationNote: '1× 45 Min. Unterricht pro Woche',
@@ -113,7 +113,7 @@ const pricing = [
   },
   {
     title: 'Schlagzeug für Fortgeschrittene (60 Min.)',
-    desc: 'Für Drummer, die gezielt an Technik, Timing, Präzision und anspruchsvolleren Songs arbeiten möchten.',
+    desc: 'Für Drummer, die gezielt an Technik, Timing, Präzision und anspruchsvolleren Songs arbeiten möchten. Ideal, um Fähigkeiten weiter auszubauen, komplexe Grooves sicher zu beherrschen und den eigenen Standard spürbar anzuheben.',
     price: '172',
     billingNote: 'Monatliche Abrechnung · Vertrag',
     durationNote: '1× 60 Min. Unterricht pro Woche',
@@ -126,7 +126,7 @@ const pricing = [
   },
   {
     title: 'Klavier für Anfänger',
-    desc: 'Für Anfänger, Kinder und Erwachsene, die Klavier ohne den starren Klassikunterricht lernen möchten.',
+    desc: 'Für Anfänger, Kinder und Erwachsene, die Klavier ohne den starren Klassikunterricht lernen möchten. Du bekommst einen klaren, praxisnahen Unterricht, der dich sicher ans Klavier spielen heranführt. Wir verbinden Noten, Akkorde und Technik so, dass du schnell Fortschritte machst und deine ersten Lieder souverän begleiten kannst.',
     price: '86',
     billingNote: 'Monatliche Abrechnung · Vertrag',
     durationNote: '1× 30 Min. Unterricht pro Woche',
@@ -170,8 +170,8 @@ const BASE = '#1E2E34'
 const SURFACE = '#2F3E46'
 const SURFACE_RAISED = '#354F52'
 const TEXT = '#CAD2C5'
-const TEXT_MUTED = '#84A98C'
-const TEXT_SUBTLE = '#52796F'
+const TEXT_MUTED = 'rgba(255,255,255,0.75)'   // near-white body text, no green tint
+const TEXT_SUBTLE = 'rgba(255,255,255,0.85)'   // pure white, no green tint
 const GLASS_BG = 'rgba(202,210,197,0.04)'
 const GLASS_BORDER = 'rgba(202,210,197,0.08)'
 const GLASS_BORDER_HOVER = 'rgba(132,169,140,0.2)'
@@ -193,8 +193,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 backdrop-blur-md" style={{ background: `rgba(30,46,52,0.92)`, borderBottom: `1px solid ${GLASS_BORDER}` }}>
         <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="/" className="font-semibold tracking-tight text-sm" style={{ color: TEXT }}>
-            Manuel Büttner
-            <span style={{ color: ACCENT }} className="ml-1">·</span>
+            Manuel Büttner - Schlagzeuglehrer
           </a>
           <div className="hidden sm:flex items-center gap-8 text-sm" style={{ color: TEXT_MUTED }}>
             <a href="#start" className="transition-colors hover:text-[#CAD2C5]" style={{ color: TEXT_MUTED }}>Start</a>
@@ -206,7 +205,7 @@ export default function Home() {
             className="text-xs font-semibold px-4 py-2 rounded-full transition-colors"
             style={{ background: ACCENT, color: BASE }}
           >
-            Probestunde buchen
+            kostenlose Probestunde sichern
           </a>
         </nav>
       </header>
@@ -215,7 +214,10 @@ export default function Home() {
       <section
         id="start"
         className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 pt-16 pb-24 overflow-hidden"
+        style={{ backgroundImage: 'url(/hero.jpg)', backgroundSize: 'cover', backgroundPosition: 'center top' }}
       >
+        {/* Dark overlay to keep text readable */}
+        <div className="absolute inset-0" style={{ background: 'rgba(18,30,36,0.80)' }} />
         {/* Background glow */}
         <div
           className="absolute inset-0 opacity-20"
@@ -243,13 +245,22 @@ export default function Home() {
             In meinem Schlagzeugunterricht arbeiten wir gezielt an deinen persönlichen Zielen – egal ob du Fortgeschrittener oder Anfänger bist. Erfahrene Drummer verbessern Technik, Timing, Kontrolle und ihr Song‒Repertoire spürbar. Anfänger bekommen einen klaren Einstieg mit schnellen Erfolgserlebnissen und einem Gefühl von Fortschritt ab der ersten Stunde.
           </p>
 
+          <ul className="text-sm text-left max-w-xl mx-auto space-y-2 pt-2">
+            {valueProps.map((vp, i) => (
+              <li key={i} className="flex items-start gap-2" style={{ color: TEXT_MUTED }}>
+                <span className="flex-shrink-0 mt-1" style={{ color: ACCENT }}>✓</span>
+                {vp}
+              </li>
+            ))}
+          </ul>
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <a
               href="#kontakt"
               className="inline-flex items-center gap-2 font-semibold px-8 py-4 rounded-full active:scale-[0.98] transition-all shadow-lg"
               style={{ background: ACCENT, color: BASE, boxShadow: `0 8px 24px rgba(132,169,140,0.2)` }}
             >
-              Kostenlose Probestunde buchen
+              kostenlose Probestunde sichern
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -270,34 +281,6 @@ export default function Home() {
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-30">
           <div className="w-px h-8" style={{ background: ACCENT }} />
-        </div>
-      </section>
-
-      {/* ── 3. ValueProps ────────────────────────────────────────────── */}
-      <section className="py-20" style={{ background: SURFACE }}>
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-            <div>
-              <p className="text-xs font-medium tracking-widest uppercase mb-4" style={{ color: ACCENT }}>Was du bekommst</p>
-              <h2 className="text-display-md font-semibold leading-tight" style={{ color: TEXT }}>
-                Kein Herumirren. Echter Fortschritt.
-              </h2>
-            </div>
-            <ul className="space-y-4">
-              {valueProps.map((v, i) => (
-                <li key={i} className="flex items-start gap-4 group">
-                  <span className="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center" style={{ border: `1px solid rgba(132,169,140,0.4)` }}>
-                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                      <path d="M2 5l2.5 2.5L8 2.5" stroke={ACCENT} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </span>
-                  <p className="text-sm leading-relaxed" style={{ color: TEXT_MUTED }}>
-                    {v}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
       </section>
 
@@ -531,6 +514,13 @@ export default function Home() {
                   Mich begeistert der Moment, wenn fortgeschrittene Drummer merken, dass Technik, Timing und Kontrolle plötzlich zusammenfallen – dieser „Aha-Moment", der das Spiel auf ein neues Niveau bringt. Nach über 29 Jahren am Schlagzeug, in Bands, Orchestern und Musicalproduktionen ist es mir ein großes Anliegen, Musiker weiterzubringen und ungenutztes Potenzial sichtbar zu machen. Und auch Anfänger unterstütze ich gern dabei, die Grundlagen sauber zu lernen und ihre ersten musikalischen Schritte sicher zu machen.
                 </p>
               </div>
+              <a
+                href="#kontakt"
+                className="text-sm font-medium underline underline-offset-4 inline-flex items-center gap-1"
+                style={{ color: ACCENT }}
+              >
+                Mehr erfahren →
+              </a>
             </div>
           </div>
         </div>
@@ -621,7 +611,8 @@ export default function Home() {
             {/* Location info */}
             <div className="md:col-span-2 space-y-6">
               <div>
-                <p className="font-semibold mb-2" style={{ color: TEXT }}>Wo findet Unterricht statt?</p>
+                <p className="font-semibold mb-1" style={{ color: TEXT }}>Wo wird unterrichtet und wie erreiche ich dich?</p>
+                <p className="text-sm mb-2" style={{ color: TEXT_MUTED }}>Hier findet dein Unterricht statt.</p>
                 <p className="text-sm leading-relaxed" style={{ color: TEXT_MUTED }}>
                   Schlesierstraße 19a<br />
                   64665 Alsbach-Hähnlein<br />
@@ -659,11 +650,22 @@ export default function Home() {
 
       {/* ── 13. Footer ───────────────────────────────────────────────── */}
       <footer className="py-10" style={{ borderTop: `1px solid ${GLASS_BORDER}` }}>
-        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm" style={{ color: TEXT_SUBTLE }}>
-          <p>© 2025 Manuel Büttner · Schlagzeug- & Klavierunterricht · Alsbach-Hähnlein</p>
-          <div className="flex items-center gap-6">
-            <a href="/impressum" className="hover:text-[#84A98C] transition-colors">Impressum</a>
-            <a href="/datenschutz" className="hover:text-[#84A98C] transition-colors">Datenschutz</a>
+        <div className="max-w-6xl mx-auto px-6" style={{ color: TEXT_MUTED }}>
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-sm">
+            <div className="space-y-1">
+              <p className="font-medium" style={{ color: TEXT }}>Manuel Büttner - Schlagzeuglehrer · Dein Partner für musikalischen Erfolg.</p>
+              <p>
+                <a href="tel:+491703648789" className="transition-colors hover:text-[#84A98C]">+49 170 3648789</a>
+                {' · '}
+                <a href="mailto:info@manuelbuettner.de" className="transition-colors hover:text-[#84A98C]">info@manuelbuettner.de</a>
+              </p>
+              <p>Schlesierstraße 19a, 64665 Alsbach-Hähnlein</p>
+              <p style={{ color: TEXT_SUBTLE }}>© {new Date().getFullYear()} Manuel Büttner. Alle Rechte vorbehalten.</p>
+            </div>
+            <div className="flex items-center gap-6 text-sm" style={{ color: TEXT_MUTED }}>
+              <a href="/impressum" className="hover:text-[#84A98C] transition-colors">Impressum</a>
+              <a href="/datenschutz" className="hover:text-[#84A98C] transition-colors">Datenschutz</a>
+            </div>
           </div>
         </div>
       </footer>

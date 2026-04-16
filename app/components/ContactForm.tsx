@@ -2,18 +2,11 @@
 
 import { useState } from 'react'
 
-const requestTypes = [
-  'Probestunde buchen',
-  'Infos zu Preisen & Paketen',
-  'Online-Unterricht anfragen',
-  'Sonstiges',
-]
-
 export default function ContactForm() {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', type: '' })
+  const [form, setForm] = useState({ vorname: '', nachname: '', email: '', phone: '', anliegen: '' })
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
@@ -28,7 +21,7 @@ export default function ContactForm() {
       })
       if (res.ok) {
         setStatus('success')
-        setForm({ name: '', email: '', phone: '', type: '' })
+        setForm({ vorname: '', nachname: '', email: '', phone: '', anliegen: '' })
       } else {
         setStatus('error')
       }
@@ -38,7 +31,7 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    'w-full bg-[rgba(202,210,197,0.04)] border border-[rgba(202,210,197,0.10)] rounded-lg px-4 py-3.5 text-[#CAD2C5] text-sm placeholder:text-[#52796F] focus:outline-none focus:border-[#84A98C] focus:bg-[rgba(132,169,140,0.05)] transition-all'
+    'w-full bg-[rgba(202,210,197,0.04)] border border-[rgba(202,210,197,0.10)] rounded-lg px-4 py-3.5 text-white text-sm placeholder:text-[#52796F] focus:outline-none focus:border-[#84A98C] focus:bg-[rgba(132,169,140,0.05)] transition-all'
 
   if (status === 'success') {
     return (
@@ -58,16 +51,30 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: '#84A98C' }}>Name *</label>
+          <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: '#84A98C' }}>Vorname *</label>
           <input
-            name="name"
-            value={form.name}
+            name="vorname"
+            value={form.vorname}
             onChange={handleChange}
             required
-            placeholder="Dein Name"
+            placeholder="Dein Vorname"
             className={inputClass}
           />
         </div>
+        <div>
+          <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: '#84A98C' }}>Nachname *</label>
+          <input
+            name="nachname"
+            value={form.nachname}
+            onChange={handleChange}
+            required
+            placeholder="Dein Nachname"
+            className={inputClass}
+          />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: '#84A98C' }}>E-Mail *</label>
           <input
@@ -80,34 +87,30 @@ export default function ContactForm() {
             className={inputClass}
           />
         </div>
+        <div>
+          <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: '#84A98C' }}>Telefon (optional)</label>
+          <input
+            name="phone"
+            type="tel"
+            value={form.phone}
+            onChange={handleChange}
+            placeholder="+49 ..."
+            className={inputClass}
+          />
+        </div>
       </div>
 
       <div>
-        <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: '#84A98C' }}>Telefon (optional)</label>
-        <input
-          name="phone"
-          type="tel"
-          value={form.phone}
-          onChange={handleChange}
-          placeholder="+49 ..."
-          className={inputClass}
-        />
-      </div>
-
-      <div>
-        <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: '#84A98C' }}>Anfrage-Typ *</label>
-        <select
-          name="type"
-          value={form.type}
+        <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: '#84A98C' }}>Dein Anliegen *</label>
+        <textarea
+          name="anliegen"
+          value={form.anliegen}
           onChange={handleChange}
           required
-          className={`${inputClass} appearance-none cursor-pointer`}
-        >
-          <option value="" disabled>Bitte wählen …</option>
-          {requestTypes.map((t) => (
-            <option key={t} value={t}>{t}</option>
-          ))}
-        </select>
+          rows={4}
+          placeholder="Was möchtest du mir mitteilen?"
+          className={`${inputClass} resize-none`}
+        />
       </div>
 
       {status === 'error' && (
@@ -120,7 +123,7 @@ export default function ContactForm() {
         className="w-full font-semibold py-4 rounded-lg active:scale-[0.99] transition-all disabled:opacity-60 disabled:cursor-not-allowed mt-2"
         style={{ background: '#84A98C', color: '#1E2E34' }}
       >
-        {status === 'sending' ? 'Wird gesendet …' : 'Nachricht senden'}
+        {status === 'sending' ? 'Wird gesendet …' : 'Angaben absenden'}
       </button>
     </form>
   )

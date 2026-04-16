@@ -8,17 +8,16 @@ export const metadata: Metadata = {
 
 export default function ImpressumPage() {
   return (
-    <div className="min-h-screen bg-[#0d0c0a] text-[#f5f0e8]">
+    <div className="min-h-screen bg-[#1E2E34] text-[#CAD2C5]">
       {/* NavBar */}
-      <header className="sticky top-0 z-50 bg-[rgba(13,12,10,0.92)] backdrop-blur-md border-b border-[rgba(255,248,235,0.06)]">
+      <header className="sticky top-0 z-50 bg-[rgba(30,46,52,0.92)] backdrop-blur-md border-b border-[rgba(202,210,197,0.08)]">
         <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="font-semibold text-[#f5f0e8] tracking-tight text-sm">
-            Manuel Büttner
-            <span className="text-[#d4a843] ml-1">·</span>
+          <Link href="/" className="font-semibold text-[#CAD2C5] tracking-tight text-sm">
+            Manuel Büttner - Schlagzeuglehrer
           </Link>
           <Link
             href="/"
-            className="text-xs font-semibold text-[#a09880] hover:text-[#f5f0e8] transition-colors flex items-center gap-1"
+            className="text-xs font-semibold text-[rgba(255,255,255,0.72)] hover:text-white transition-colors flex items-center gap-1"
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M11 7H3M7 3l-4 4 4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -30,12 +29,12 @@ export default function ImpressumPage() {
 
       {/* Content */}
       <main className="max-w-3xl mx-auto px-6 py-16">
-        <h1 className="text-display-md font-semibold text-[#f5f0e8] mb-10">Impressum</h1>
+        <h1 className="text-display-md font-semibold text-[#CAD2C5] mb-10">Impressum</h1>
 
-        <div className="space-y-8 text-[#a09880] text-sm leading-relaxed">
+        <div className="space-y-8 text-[rgba(255,255,255,0.72)] text-sm leading-relaxed">
 
           <section>
-            <h2 className="text-[#f5f0e8] font-semibold text-base mb-3">Angaben gemäß § 5 DDG</h2>
+            <h2 className="text-[#CAD2C5] font-semibold text-base mb-3">Angaben gemäß § 5 DDG</h2>
             <p>Manuel Büttner<br />
             Einzelunternehmer<br />
             Schlesierstraße 19a<br />
@@ -44,30 +43,30 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="text-[#f5f0e8] font-semibold text-base mb-3">Kontakt</h2>
+            <h2 className="text-[#CAD2C5] font-semibold text-base mb-3">Kontakt</h2>
             <p>Telefon: 0170-3648789<br />
             E-Mail: info@manuelbuettner.de</p>
           </section>
 
           <section>
-            <h2 className="text-[#f5f0e8] font-semibold text-base mb-3">Umsatzsteuer</h2>
+            <h2 className="text-[#CAD2C5] font-semibold text-base mb-3">Umsatzsteuer</h2>
             <p>Gemäß § 19 UStG wird keine Umsatzsteuer ausgewiesen (Kleinunternehmerregelung).</p>
           </section>
 
           <section>
-            <h2 className="text-[#f5f0e8] font-semibold text-base mb-3">Redaktionell verantwortlich</h2>
+            <h2 className="text-[#CAD2C5] font-semibold text-base mb-3">Redaktionell verantwortlich</h2>
             <p>Manuel Büttner (Anschrift wie oben)</p>
           </section>
 
           <section>
-            <h2 className="text-[#f5f0e8] font-semibold text-base mb-3">EU-Streitschlichtung</h2>
+            <h2 className="text-[#CAD2C5] font-semibold text-base mb-3">EU-Streitschlichtung</h2>
             <p>
               Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{' '}
               <a
                 href="https://ec.europa.eu/consumers/odr/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#d4a843] hover:underline underline-offset-2"
+                className="text-[#84A98C] hover:underline underline-offset-2"
               >
                 https://ec.europa.eu/consumers/odr/
               </a>
@@ -77,7 +76,7 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="text-[#f5f0e8] font-semibold text-base mb-3">
+            <h2 className="text-[#CAD2C5] font-semibold text-base mb-3">
               Verbraucherstreitbeilegung / Universalschlichtungsstelle
             </h2>
             <p>
@@ -87,7 +86,7 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="text-[#f5f0e8] font-semibold text-base mb-3">Haftung für Inhalte</h2>
+            <h2 className="text-[#CAD2C5] font-semibold text-base mb-3">Haftung für Inhalte</h2>
             <p>
               Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten
               nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als
@@ -105,7 +104,7 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="text-[#f5f0e8] font-semibold text-base mb-3">Haftung für Links</h2>
+            <h2 className="text-[#CAD2C5] font-semibold text-base mb-3">Haftung für Links</h2>
             <p>
               Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
               Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
@@ -122,7 +121,7 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="text-[#f5f0e8] font-semibold text-base mb-3">Urheberrecht</h2>
+            <h2 className="text-[#CAD2C5] font-semibold text-base mb-3">Urheberrecht</h2>
             <p>
               Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen
               dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art
@@ -139,19 +138,19 @@ export default function ImpressumPage() {
             </p>
           </section>
 
-          <p className="text-[#66604e] text-xs pt-4 border-t border-[rgba(255,248,235,0.06)]">
+          <p className="text-xs pt-4 border-t border-[rgba(202,210,197,0.08)]" style={{ color: 'rgba(255,255,255,0.45)' }}>
             Stand: 14. April 2026
           </p>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-[rgba(255,248,235,0.06)] py-10 mt-8">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[#66604e]">
-          <p>© 2025 Manuel Büttner · Dein Partner für musikalischen Erfolg</p>
+      <footer className="border-t border-[rgba(202,210,197,0.08)] py-10 mt-8">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <p>© {new Date().getFullYear()} Manuel Büttner · Dein Partner für musikalischen Erfolg</p>
           <div className="flex items-center gap-6">
-            <Link href="/impressum" className="hover:text-[#a09880] transition-colors">Impressum</Link>
-            <Link href="/datenschutz" className="hover:text-[#a09880] transition-colors">Datenschutz</Link>
+            <Link href="/impressum" className="hover:text-[#84A98C] transition-colors">Impressum</Link>
+            <Link href="/datenschutz" className="hover:text-[#84A98C] transition-colors">Datenschutz</Link>
           </div>
         </div>
       </footer>
