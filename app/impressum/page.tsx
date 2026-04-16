@@ -8,11 +8,11 @@ export const metadata: Metadata = {
 
 export default function ImpressumPage() {
   return (
-    <div className="min-h-screen bg-[#1E2E34] text-[#CAD2C5]">
+    <div className="min-h-screen bg-[#1E2E34] text-white">
       {/* NavBar */}
       <header className="sticky top-0 z-50 bg-[rgba(30,46,52,0.92)] backdrop-blur-md border-b border-[rgba(202,210,197,0.08)]">
         <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="font-semibold text-[#CAD2C5] tracking-tight text-sm">
+          <Link href="/" className="font-semibold text-white tracking-tight text-sm">
             Manuel Büttner - Schlagzeuglehrer
           </Link>
           <Link
@@ -29,12 +29,12 @@ export default function ImpressumPage() {
 
       {/* Content */}
       <main className="max-w-3xl mx-auto px-6 py-16">
-        <h1 className="text-display-md font-semibold text-[#CAD2C5] mb-10">Impressum</h1>
+        <h1 className="text-display-md font-semibold text-white mb-10">Impressum</h1>
 
         <div className="space-y-8 text-[rgba(255,255,255,0.72)] text-sm leading-relaxed">
 
           <section>
-            <h2 className="text-[#CAD2C5] font-semibold text-base mb-3">Angaben gemäß § 5 DDG</h2>
+            <h2 className="text-white font-semibold text-base mb-3">Angaben gemäß § 5 DDG</h2>
             <p>Manuel Büttner<br />
             Einzelunternehmer<br />
             Schlesierstraße 19a<br />
@@ -43,23 +43,23 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="text-[#CAD2C5] font-semibold text-base mb-3">Kontakt</h2>
+            <h2 className="text-white font-semibold text-base mb-3">Kontakt</h2>
             <p>Telefon: 0170-3648789<br />
             E-Mail: info@manuelbuettner.de</p>
           </section>
 
           <section>
-            <h2 className="text-[#CAD2C5] font-semibold text-base mb-3">Umsatzsteuer</h2>
+            <h2 className="text-white font-semibold text-base mb-3">Umsatzsteuer</h2>
             <p>Gemäß § 19 UStG wird keine Umsatzsteuer ausgewiesen (Kleinunternehmerregelung).</p>
           </section>
 
           <section>
-            <h2 className="text-[#CAD2C5] font-semibold text-base mb-3">Redaktionell verantwortlich</h2>
+            <h2 className="text-white font-semibold text-base mb-3">Redaktionell verantwortlich</h2>
             <p>Manuel Büttner (Anschrift wie oben)</p>
           </section>
 
           <section>
-            <h2 className="text-[#CAD2C5] font-semibold text-base mb-3">EU-Streitschlichtung</h2>
+            <h2 className="text-white font-semibold text-base mb-3">EU-Streitschlichtung</h2>
             <p>
               Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{' '}
               <a
@@ -76,7 +76,7 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="text-[#CAD2C5] font-semibold text-base mb-3">
+            <h2 className="text-white font-semibold text-base mb-3">
               Verbraucherstreitbeilegung / Universalschlichtungsstelle
             </h2>
             <p>
@@ -86,7 +86,7 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="text-[#CAD2C5] font-semibold text-base mb-3">Haftung für Inhalte</h2>
+            <h2 className="text-white font-semibold text-base mb-3">Haftung für Inhalte</h2>
             <p>
               Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten
               nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als
@@ -104,7 +104,7 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="text-[#CAD2C5] font-semibold text-base mb-3">Haftung für Links</h2>
+            <h2 className="text-white font-semibold text-base mb-3">Haftung für Links</h2>
             <p>
               Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
               Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
@@ -121,7 +121,7 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="text-[#CAD2C5] font-semibold text-base mb-3">Urheberrecht</h2>
+            <h2 className="text-white font-semibold text-base mb-3">Urheberrecht</h2>
             <p>
               Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen
               dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art

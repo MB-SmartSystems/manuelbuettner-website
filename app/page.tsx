@@ -169,7 +169,7 @@ const ACCENT_DIM = '#52796F'
 const BASE = '#1E2E34'
 const SURFACE = '#2F3E46'
 const SURFACE_RAISED = '#354F52'
-const TEXT = '#CAD2C5'
+const TEXT = '#FFFFFF'
 const TEXT_MUTED = 'rgba(255,255,255,0.75)'   // near-white body text, no green tint
 const TEXT_SUBTLE = 'rgba(255,255,255,0.85)'   // pure white, no green tint
 const GLASS_BG = 'rgba(202,210,197,0.04)'
@@ -196,9 +196,9 @@ export default function Home() {
             Manuel Büttner - Schlagzeuglehrer
           </a>
           <div className="hidden sm:flex items-center gap-8 text-sm" style={{ color: TEXT_MUTED }}>
-            <a href="#start" className="transition-colors hover:text-[#CAD2C5]" style={{ color: TEXT_MUTED }}>Start</a>
-            <a href="#preise" className="transition-colors hover:text-[#CAD2C5]" style={{ color: TEXT_MUTED }}>Preise</a>
-            <a href="#kontakt" className="transition-colors hover:text-[#CAD2C5]" style={{ color: TEXT_MUTED }}>Kontakt</a>
+            <a href="#start" className="transition-colors hover:text-white" style={{ color: TEXT_MUTED }}>Start</a>
+            <a href="#preise" className="transition-colors hover:text-white" style={{ color: TEXT_MUTED }}>Preise</a>
+            <a href="#kontakt" className="transition-colors hover:text-white" style={{ color: TEXT_MUTED }}>Kontakt</a>
           </div>
           <a
             href="#kontakt"

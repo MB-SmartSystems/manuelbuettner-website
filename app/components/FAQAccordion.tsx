@@ -53,7 +53,7 @@ export default function FAQAccordion() {
               <span className="flex-shrink-0 text-sm font-semibold" style={{ color: 'rgba(132,169,140,0.6)' }}>
                 {faq.num}
               </span>
-              <span className="font-medium text-base leading-snug" style={{ color: '#CAD2C5' }}>
+              <span className="font-medium text-base leading-snug" style={{ color: '#FFFFFF' }}>
                 {faq.q}
               </span>
             </div>

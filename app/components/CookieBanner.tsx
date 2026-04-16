@@ -32,7 +32,7 @@ export default function CookieBanner() {
           <a
             href="/datenschutz"
             className="hover:underline underline-offset-2"
-            style={{ color: '#CAD2C5' }}
+            style={{ color: '#FFFFFF' }}
           >
             Datenschutz
           </a>

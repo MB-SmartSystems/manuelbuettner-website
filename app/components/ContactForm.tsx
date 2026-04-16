@@ -41,7 +41,7 @@ export default function ContactForm() {
             <path d="M5 12l5 5L20 7" stroke="#84A98C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
-        <p className="font-medium" style={{ color: '#CAD2C5' }}>Nachricht erhalten!</p>
+        <p className="font-medium" style={{ color: '#FFFFFF' }}>Nachricht erhalten!</p>
         <p className="text-sm" style={{ color: '#84A98C' }}>Ich melde mich zeitnah bei dir.</p>
       </div>
     )

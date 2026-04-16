@@ -8,11 +8,11 @@ export const metadata: Metadata = {
 
 export default function DatenschutzPage() {
   return (
-    <div className="min-h-screen bg-[#1E2E34] text-[#CAD2C5]">
+    <div className="min-h-screen bg-[#1E2E34] text-white">
       {/* NavBar */}
       <header className="sticky top-0 z-50 bg-[rgba(30,46,52,0.92)] backdrop-blur-md border-b border-[rgba(202,210,197,0.08)]">
         <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="font-semibold text-[#CAD2C5] tracking-tight text-sm">
+          <Link href="/" className="font-semibold text-white tracking-tight text-sm">
             Manuel Büttner - Schlagzeuglehrer
           </Link>
           <Link
@@ -29,13 +29,13 @@ export default function DatenschutzPage() {
 
       {/* Content */}
       <main className="max-w-3xl mx-auto px-6 py-16">
-        <h1 className="text-display-md font-semibold text-[#CAD2C5] mb-10">Datenschutzerklärung</h1>
+        <h1 className="text-display-md font-semibold text-white mb-10">Datenschutzerklärung</h1>
 
         <div className="space-y-10 text-[rgba(255,255,255,0.72)] text-sm leading-relaxed">
 
           {/* 1 */}
           <section>
-            <h2 className="text-[#CAD2C5] font-semibold text-base mb-4">1. Datenschutz auf einen Blick</h2>
+            <h2 className="text-white font-semibold text-base mb-4">1. Datenschutz auf einen Blick</h2>
 
             <h3 className="text-[#84A98C] font-medium text-sm mb-2">Allgemeine Hinweise</h3>
             <p className="mb-4">
@@ -46,14 +46,14 @@ export default function DatenschutzPage() {
             </p>
 
             <h3 className="text-[#84A98C] font-medium text-sm mb-2">Datenerfassung auf dieser Website</h3>
-            <p className="font-medium text-[#CAD2C5] mb-1">Wer ist verantwortlich für die Datenerfassung auf dieser Website?</p>
+            <p className="font-medium text-white mb-1">Wer ist verantwortlich für die Datenerfassung auf dieser Website?</p>
             <p className="mb-4">
               Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten
               können Sie dem Abschnitt &ldquo;Hinweis zur Verantwortlichen Stelle&rdquo; in dieser
               Datenschutzerklärung entnehmen.
             </p>
 
-            <p className="font-medium text-[#CAD2C5] mb-1">Wie erfassen wir Ihre Daten?</p>
+            <p className="font-medium text-white mb-1">Wie erfassen wir Ihre Daten?</p>
             <p className="mb-4">
               Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich
               z.&nbsp;B. um Daten handeln, die Sie in ein Kontaktformular eingeben. Andere Daten werden
@@ -61,13 +61,13 @@ export default function DatenschutzPage() {
               technische Daten (z.&nbsp;B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs).
             </p>
 
-            <p className="font-medium text-[#CAD2C5] mb-1">Wofür nutzen wir Ihre Daten?</p>
+            <p className="font-medium text-white mb-1">Wofür nutzen wir Ihre Daten?</p>
             <p className="mb-4">
               Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu
               gewährleisten. Diese Website verwendet keine Tracking- oder Analyse-Tools.
             </p>
 
-            <p className="font-medium text-[#CAD2C5] mb-1">Welche Rechte haben Sie bezüglich Ihrer Daten?</p>
+            <p className="font-medium text-white mb-1">Welche Rechte haben Sie bezüglich Ihrer Daten?</p>
             <p>
               Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer
               gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung
@@ -79,7 +79,7 @@ export default function DatenschutzPage() {
 
           {/* 2 */}
           <section>
-            <h2 className="text-[#CAD2C5] font-semibold text-base mb-4">2. Hosting</h2>
+            <h2 className="text-white font-semibold text-base mb-4">2. Hosting</h2>
 
             <h3 className="text-[#84A98C] font-medium text-sm mb-2">Vercel</h3>
             <p className="mb-4">
@@ -122,7 +122,7 @@ export default function DatenschutzPage() {
 
           {/* 3 */}
           <section>
-            <h2 className="text-[#CAD2C5] font-semibold text-base mb-4">3. Allgemeine Hinweise und Pflichtinformationen</h2>
+            <h2 className="text-white font-semibold text-base mb-4">3. Allgemeine Hinweise und Pflichtinformationen</h2>
 
             <h3 className="text-[#84A98C] font-medium text-sm mb-2">Datenschutz</h3>
             <p className="mb-4">
@@ -251,7 +251,7 @@ export default function DatenschutzPage() {
 
           {/* 4 */}
           <section>
-            <h2 className="text-[#CAD2C5] font-semibold text-base mb-4">4. Datenerfassung auf dieser Website</h2>
+            <h2 className="text-white font-semibold text-base mb-4">4. Datenerfassung auf dieser Website</h2>
 
             <h3 className="text-[#84A98C] font-medium text-sm mb-2">Cookies und lokaler Speicher</h3>
             <p className="mb-4">
