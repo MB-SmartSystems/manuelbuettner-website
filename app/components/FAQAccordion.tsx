@@ -40,8 +40,8 @@ export default function FAQAccordion() {
           key={i}
           className="rounded-lg overflow-hidden transition-colors"
           style={{
-            border: open === i ? '1px solid rgba(132,169,140,0.35)' : '1px solid rgba(202,210,197,0.10)',
-            background: open === i ? 'rgba(132,169,140,0.05)' : 'transparent',
+            border: open === i ? '1px solid rgba(82,121,111,0.35)' : '1px solid rgba(255,255,255,0.08)',
+            background: open === i ? 'rgba(82,121,111,0.07)' : '#111111',
           }}
         >
           <button
@@ -50,17 +50,17 @@ export default function FAQAccordion() {
             aria-expanded={open === i}
           >
             <div className="flex items-center gap-4">
-              <span className="flex-shrink-0 text-sm font-semibold" style={{ color: 'rgba(132,169,140,0.6)' }}>
+              <span className="flex-shrink-0 text-sm font-semibold" style={{ color: '#52796F' }}>
                 {faq.num}
               </span>
-              <span className="font-medium text-base leading-snug" style={{ color: '#FFFFFF' }}>
+              <span className="font-medium text-base leading-snug" style={{ color: '#ffffff' }}>
                 {faq.q}
               </span>
             </div>
             <span
               className="flex-shrink-0 w-6 h-6 flex items-center justify-center transition-transform duration-300"
               style={{
-                color: '#84A98C',
+                color: '#52796F',
                 transform: open === i ? 'rotate(45deg)' : 'rotate(0deg)',
               }}
             >
@@ -77,7 +77,7 @@ export default function FAQAccordion() {
               overflow: 'hidden',
             }}
           >
-            <p className="px-6 pb-5 text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.72)' }}>{faq.a}</p>
+            <p className="px-6 pb-5 text-sm leading-relaxed" style={{ color: '#a0a0a0' }}>{faq.a}</p>
           </div>
         </div>
       ))}

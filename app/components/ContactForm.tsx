@@ -2,6 +2,9 @@
 
 import { useState } from 'react'
 
+const ACCENT = '#52796F'
+const BASE = '#0a0a0a'
+
 export default function ContactForm() {
   const [form, setForm] = useState({ vorname: '', nachname: '', email: '', phone: '', anliegen: '' })
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
@@ -31,18 +34,18 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    'w-full bg-[rgba(202,210,197,0.04)] border border-[rgba(202,210,197,0.10)] rounded-lg px-4 py-3.5 text-white text-sm placeholder:text-[#52796F] focus:outline-none focus:border-[#84A98C] focus:bg-[rgba(132,169,140,0.05)] transition-all'
+    'w-full bg-[#1a1a1a] border border-[rgba(255,255,255,0.10)] rounded-lg px-4 py-3.5 text-white text-sm placeholder:text-[rgba(255,255,255,0.35)] focus:outline-none focus:border-[#52796F] focus:bg-[rgba(82,121,111,0.04)] transition-all'
 
   if (status === 'success') {
     return (
       <div className="text-center py-12 space-y-3">
-        <div className="w-14 h-14 mx-auto rounded-full flex items-center justify-center" style={{ background: 'rgba(132,169,140,0.1)', border: '1px solid rgba(132,169,140,0.3)' }}>
+        <div className="w-14 h-14 mx-auto rounded-full flex items-center justify-center" style={{ background: 'rgba(82,121,111,0.10)', border: '1px solid rgba(82,121,111,0.30)' }}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M5 12l5 5L20 7" stroke="#84A98C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M5 12l5 5L20 7" stroke={ACCENT} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
-        <p className="font-medium" style={{ color: '#FFFFFF' }}>Nachricht erhalten!</p>
-        <p className="text-sm" style={{ color: '#84A98C' }}>Ich melde mich zeitnah bei dir.</p>
+        <p className="font-medium" style={{ color: '#ffffff' }}>Nachricht erhalten!</p>
+        <p className="text-sm" style={{ color: ACCENT }}>Ich melde mich zeitnah bei dir.</p>
       </div>
     )
   }
@@ -51,7 +54,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: '#84A98C' }}>Vorname *</label>
+          <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: ACCENT }}>Vorname *</label>
           <input
             name="vorname"
             value={form.vorname}
@@ -62,7 +65,7 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: '#84A98C' }}>Nachname *</label>
+          <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: ACCENT }}>Nachname *</label>
           <input
             name="nachname"
             value={form.nachname}
@@ -76,7 +79,7 @@ export default function ContactForm() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: '#84A98C' }}>E-Mail *</label>
+          <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: ACCENT }}>E-Mail *</label>
           <input
             name="email"
             type="email"
@@ -88,7 +91,7 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: '#84A98C' }}>Telefon (optional)</label>
+          <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: ACCENT }}>Telefon (optional)</label>
           <input
             name="phone"
             type="tel"
@@ -101,7 +104,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: '#84A98C' }}>Dein Anliegen *</label>
+        <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: ACCENT }}>Dein Anliegen *</label>
         <textarea
           name="anliegen"
           value={form.anliegen}
@@ -121,7 +124,7 @@ export default function ContactForm() {
         type="submit"
         disabled={status === 'sending'}
         className="w-full font-semibold py-4 rounded-lg active:scale-[0.99] transition-all disabled:opacity-60 disabled:cursor-not-allowed mt-2"
-        style={{ background: '#84A98C', color: '#1E2E34' }}
+        style={{ background: ACCENT, color: BASE }}
       >
         {status === 'sending' ? 'Wird gesendet …' : 'Angaben absenden'}
       </button>

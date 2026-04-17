@@ -1,27 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  /* Forest Green Design System — Music Instructor */
-  --color-base: #1E2E34;
-  --color-surface: #2F3E46;
-  --color-surface-raised: #354F52;
-  --color-surface-overlay: #3A5A52;
-  --color-surface-bright: #52796F;
+  /* Premium Dark Design System — Drum Teacher */
+  --color-base: #0a0a0a;
+  --color-surface: #111111;
+  --color-surface-raised: #1a1a1a;
+  --color-surface-overlay: #222222;
+  --color-surface-bright: #2a2a2a;
 
-  --color-accent: #84A98C;
-  --color-accent-dim: #52796F;
-  --color-accent-glow: rgba(132, 169, 140, 0.15);
-  --color-accent-subtle: rgba(132, 169, 140, 0.08);
+  --color-accent: #52796F;
+  --color-accent-dim: #3D5F57;
+  --color-accent-glow: rgba(82, 121, 111, 0.15);
+  --color-accent-subtle: rgba(82, 121, 111, 0.08);
 
-  --color-on-dark: #CAD2C5;
-  --color-on-dark-muted: #84A98C;
-  --color-on-dark-subtle: #52796F;
+  --color-on-dark: #ffffff;
+  --color-on-dark-muted: #a0a0a0;
+  --color-on-dark-subtle: #666666;
 
-  --color-glass-bg: rgba(202, 210, 197, 0.04);
-  --color-glass-border: rgba(202, 210, 197, 0.08);
-  --color-glass-border-hover: rgba(132, 169, 140, 0.2);
+  --color-glass-bg: rgba(255, 255, 255, 0.04);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-glass-border-hover: rgba(82, 121, 111, 0.2);
 
-  --color-success: #84A98C;
+  --color-success: #52796F;
   --color-error: #ff4d4d;
 
   --text-display-xl: clamp(3rem, 6vw, 5rem);
@@ -55,17 +55,18 @@
 }
 
 html {
+  font-size: 20px;
   scroll-behavior: smooth;
 }
 
 body {
-  color: #CAD2C5 !important;
-  background-color: #1E2E34 !important;
+  color: #ffffff !important;
+  background-color: #0a0a0a !important;
 }
 
 ::selection {
-  background-color: #84A98C;
-  color: #1E2E34;
+  background-color: #52796F;
+  color: #0a0a0a;
 }
 
 /* Scroll reveal */
@@ -92,12 +93,12 @@ body {
 
 /* Glass card */
 .glass-card {
-  background: rgba(202, 210, 197, 0.04);
-  border: 1px solid rgba(202, 210, 197, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 .glass-card:hover {
-  border-color: rgba(132, 169, 140, 0.2);
-  box-shadow: 0 0 30px rgba(132, 169, 140, 0.08);
+  border-color: rgba(82, 121, 111, 0.2);
+  box-shadow: 0 0 30px rgba(82, 121, 111, 0.08);
 }
