@@ -11,9 +11,10 @@ export default function ImpressumPage() {
     <div className="min-h-screen bg-[#1E2E34] text-white">
       {/* NavBar */}
       <header className="sticky top-0 z-50 bg-[rgba(30,46,52,0.92)] backdrop-blur-md border-b border-[rgba(202,210,197,0.08)]">
-        <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="font-semibold text-white tracking-tight text-sm">
-            Manuel Büttner - Schlagzeuglehrer
+        <nav className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
+          <Link href="/" className="font-semibold text-white tracking-tight text-sm whitespace-nowrap">
+            <span className="sm:hidden">Manuel Büttner</span>
+            <span className="hidden sm:inline">Manuel Büttner - Schlagzeuglehrer</span>
           </Link>
           <Link
             href="/"
@@ -28,8 +29,8 @@ export default function ImpressumPage() {
       </header>
 
       {/* Content */}
-      <main className="max-w-3xl mx-auto px-6 py-16">
-        <h1 className="text-display-md font-semibold text-white mb-10">Impressum</h1>
+      <main className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16">
+        <h1 className="text-2xl sm:text-3xl md:text-display-md font-semibold text-white mb-8 md:mb-10">Impressum</h1>
 
         <div className="space-y-8 text-[rgba(255,255,255,0.72)] text-sm leading-relaxed">
 
@@ -146,7 +147,7 @@ export default function ImpressumPage() {
 
       {/* Footer */}
       <footer className="border-t border-[rgba(202,210,197,0.08)] py-10 mt-8">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm" style={{ color: 'rgba(255,255,255,0.45)' }}>
+        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm" style={{ color: 'rgba(255,255,255,0.45)' }}>
           <p>© {new Date().getFullYear()} Manuel Büttner · Dein Partner für musikalischen Erfolg</p>
           <div className="flex items-center gap-6">
             <Link href="/impressum" className="hover:text-[#84A98C] transition-colors">Impressum</Link>

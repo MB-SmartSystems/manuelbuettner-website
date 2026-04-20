@@ -46,7 +46,7 @@ export default function FAQAccordion() {
         >
           <button
             onClick={() => setOpen(open === i ? null : i)}
-            className="w-full flex items-center justify-between px-6 py-5 text-left gap-4"
+            className="w-full flex items-center justify-between px-4 md:px-6 py-5 text-left gap-4"
             aria-expanded={open === i}
           >
             <div className="flex items-center gap-4">
@@ -77,7 +77,7 @@ export default function FAQAccordion() {
               overflow: 'hidden',
             }}
           >
-            <p className="px-6 pb-5 text-sm leading-relaxed" style={{ color: '#a0a0a0' }}>{faq.a}</p>
+            <p className="px-4 md:px-6 pb-5 text-sm leading-relaxed" style={{ color: '#a0a0a0' }}>{faq.a}</p>
           </div>
         </div>
       ))}

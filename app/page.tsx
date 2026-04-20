@@ -208,21 +208,23 @@ export default function Home() {
 
       {/* -- 1. NavBar -------------------------------------------------- */}
       <header className="sticky top-0 z-50 backdrop-blur-md" style={{ background: `rgba(10,10,10,0.94)`, borderBottom: `1px solid ${GLASS_BORDER_HERO}` }}>
-        <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="/" className="font-semibold tracking-tight text-sm" style={{ color: TEXT }}>
-            Manuel Büttner - Schlagzeuglehrer
+        <nav className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
+          <a href="/" className="font-semibold tracking-tight text-sm whitespace-nowrap" style={{ color: TEXT }}>
+            <span className="sm:hidden">Manuel Büttner</span>
+            <span className="hidden sm:inline">Manuel Büttner - Schlagzeuglehrer</span>
           </a>
-          <div className="hidden sm:flex items-center gap-8 text-sm" style={{ color: TEXT_MUTED }}>
+          <div className="hidden md:flex items-center gap-8 text-sm" style={{ color: TEXT_MUTED }}>
             <a href="#start" className="transition-colors hover:text-white" style={{ color: TEXT_MUTED }}>Start</a>
             <a href="#preise" className="transition-colors hover:text-white" style={{ color: TEXT_MUTED }}>Preise</a>
             <a href="#kontakt" className="transition-colors hover:text-white" style={{ color: TEXT_MUTED }}>Kontakt</a>
           </div>
           <a
             href="#kontakt"
-            className="text-xs font-semibold px-4 py-2 rounded-full transition-colors"
+            className="text-xs font-semibold px-3 md:px-4 py-2 rounded-full transition-colors whitespace-nowrap flex-shrink-0"
             style={{ background: ACCENT, color: BASE }}
           >
-            kostenlose Probestunde sichern
+            <span className="sm:hidden">Probestunde</span>
+            <span className="hidden sm:inline">kostenlose Probestunde sichern</span>
           </a>
         </nav>
       </header>
@@ -230,7 +232,7 @@ export default function Home() {
       {/* -- 2. Hero ---------------------------------------------------- */}
       <section
         id="start"
-        className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 pt-16 pb-24 overflow-hidden"
+        className="relative min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] flex flex-col items-center justify-center text-center px-4 md:px-6 lg:px-8 pt-12 md:pt-16 pb-16 md:pb-24 overflow-hidden"
         style={{ backgroundImage: 'url(/hero.jpg)', backgroundSize: 'cover', backgroundPosition: 'center top' }}
       >
         {/* Dark overlay to keep text readable */}
@@ -251,14 +253,14 @@ export default function Home() {
             29+ Jahre Erfahrung · Darmstadt / Rhein-Main
           </div>
 
-          <h1 className="text-display-xl font-semibold tracking-tight leading-[1.0]" style={{ color: TEXT }}>
+          <h1 className="text-4xl sm:text-5xl md:text-display-xl font-semibold tracking-tight leading-[1.05] md:leading-[1.0]" style={{ color: TEXT }}>
             Schlagzeugunterricht,{' '}
             <span style={{ color: ACCENT }}>der dich an</span>
             <br />
             deine Ziele bringt
           </h1>
 
-          <p className="text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: TEXT_MUTED }}>
+          <p className="text-base md:text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: TEXT_MUTED }}>
             In meinem Schlagzeugunterricht arbeiten wir gezielt an deinen persönlichen Zielen – egal ob du Fortgeschrittener oder Anfänger bist. Erfahrene Drummer verbessern Technik, Timing, Kontrolle und ihr Song‒Repertoire spürbar. Anfänger bekommen einen klaren Einstieg mit schnellen Erfolgserlebnissen und einem Gefühl von Fortschritt ab der ersten Stunde.
           </p>
 
@@ -302,8 +304,8 @@ export default function Home() {
       </section>
 
       {/* -- 4. Credentials --------------------------------------------- */}
-      <section className="py-16" style={{ background: LIGHT, borderBottom: `1px solid rgba(255,255,255,0.06)` }}>
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-12 md:py-16" style={{ background: LIGHT, borderBottom: `1px solid rgba(255,255,255,0.06)` }}>
+        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           <ScrollReveal>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-20 text-center">
             <div>
@@ -326,19 +328,19 @@ export default function Home() {
       </section>
 
       {/* -- 5. WhyItWorks ---------------------------------------------- */}
-      <section className="py-24" style={{ background: LIGHT_ALT }}>
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-16 md:py-24" style={{ background: LIGHT_ALT }}>
+        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           <ScrollReveal>
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 md:mb-16">
             <p className="text-xs font-medium tracking-widest uppercase mb-4" style={{ color: ACCENT }}>Methodik</p>
-            <h2 className="text-display-md font-semibold" style={{ color: TEXT_DARK }}>Warum mein Unterricht funktioniert</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-display-md font-semibold" style={{ color: TEXT_DARK }}>Warum mein Unterricht funktioniert</h2>
           </div>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {pillars.map((p, i) => (
               <ScrollReveal key={i} delay={i * 150}>
               <div
-                className="rounded-2xl p-8 transition-all group"
+                className="rounded-2xl p-6 md:p-8 transition-all group"
                 style={{ background: CARD_BG_ALT, border: `1px solid ${CARD_BORDER}` }}
               >
                 <div className="mb-5 inline-block" style={{ color: ACCENT }}>{p.icon}</div>
@@ -352,19 +354,19 @@ export default function Home() {
       </section>
 
       {/* -- 6. Courses ------------------------------------------------- */}
-      <section className="py-24" style={{ background: LIGHT }}>
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-16 md:py-24" style={{ background: LIGHT }}>
+        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           <ScrollReveal>
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 md:mb-16">
             <p className="text-xs font-medium tracking-widest uppercase mb-4" style={{ color: ACCENT }}>Kursangebot</p>
-            <h2 className="text-display-md font-semibold" style={{ color: TEXT_DARK }}>Unterricht, der dich wirklich voranbringt</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-display-md font-semibold" style={{ color: TEXT_DARK }}>Unterricht, der dich wirklich voranbringt</h2>
           </div>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {courses.map((c, i) => (
               <ScrollReveal key={i} delay={i * 150}>
               <div
-                className="relative rounded-2xl p-8 transition-all"
+                className="relative rounded-2xl p-6 md:p-8 transition-all"
                 style={{
                   background: c.featured ? CARD_BG_FEATURED : CARD_BG_LIGHT,
                   border: c.featured ? `1px solid ${CARD_BORDER_ACCENT}` : `1px solid ${CARD_BORDER}`,
@@ -405,17 +407,17 @@ export default function Home() {
       </section>
 
       {/* -- 7. Pricing ------------------------------------------------- */}
-      <section id="preise" className="py-24" style={{ background: LIGHT_ALT }}>
-        <div className="max-w-6xl mx-auto px-6">
+      <section id="preise" className="py-16 md:py-24" style={{ background: LIGHT_ALT }}>
+        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           <ScrollReveal>
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 md:mb-16">
             <p className="text-xs font-medium tracking-widest uppercase mb-4" style={{ color: ACCENT }}>Preise</p>
-            <h2 className="text-display-md font-semibold" style={{ color: TEXT_DARK }}>Finde deinen perfekten Plan</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-display-md font-semibold" style={{ color: TEXT_DARK }}>Finde deinen perfekten Plan</h2>
           </div>
           </ScrollReveal>
 
           {/* Monthly plans */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-12">
             {pricing.map((p, i) => (
               <ScrollReveal key={i} delay={i * 100}>
               <div
@@ -497,10 +499,10 @@ export default function Home() {
       </section>
 
       {/* -- 8. About --------------------------------------------------- */}
-      <section className="py-24" style={{ background: LIGHT }}>
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-16 md:py-24" style={{ background: LIGHT }}>
+        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           <ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
             {/* Profile image */}
             <div className="relative">
               <div className="w-full aspect-[4/5] rounded-2xl overflow-hidden" style={{ border: `1px solid ${CARD_BORDER}` }}>
@@ -521,7 +523,7 @@ export default function Home() {
             <div className="space-y-6 pt-4">
               <div>
                 <p className="text-xs font-medium tracking-widest uppercase mb-4" style={{ color: ACCENT }}>Über mich</p>
-                <h2 className="text-display-md font-semibold leading-tight mb-6" style={{ color: TEXT_DARK }}>
+                <h2 className="text-2xl sm:text-3xl md:text-display-md font-semibold leading-tight mb-6" style={{ color: TEXT_DARK }}>
                   Manuel Büttner
                 </h2>
               </div>
@@ -557,12 +559,12 @@ export default function Home() {
       </section>
 
       {/* -- 9. TrialProcess -------------------------------------------- */}
-      <section className="py-24" style={{ background: LIGHT_ALT }}>
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-16 md:py-24" style={{ background: LIGHT_ALT }}>
+        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           <ScrollReveal>
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 md:mb-16">
             <p className="text-xs font-medium tracking-widest uppercase mb-4" style={{ color: ACCENT }}>DEINE CHANCE</p>
-            <h2 className="text-display-md font-semibold" style={{ color: TEXT_DARK }}>Kostenlose Probestunde</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-display-md font-semibold" style={{ color: TEXT_DARK }}>Kostenlose Probestunde</h2>
           </div>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -591,11 +593,11 @@ export default function Home() {
       </section>
 
       {/* -- 10. FAQ ---------------------------------------------------- */}
-      <section className="py-24" style={{ background: LIGHT }}>
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="text-center mb-14">
+      <section className="py-16 md:py-24" style={{ background: LIGHT }}>
+        <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-10 md:mb-14">
             <p className="text-xs font-medium tracking-widest uppercase mb-4" style={{ color: ACCENT }}>FAQ</p>
-            <h2 className="text-display-md font-semibold" style={{ color: TEXT_DARK }}>Häufig gestellte Fragen</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-display-md font-semibold" style={{ color: TEXT_DARK }}>Häufig gestellte Fragen</h2>
             <p className="text-sm mt-3" style={{ color: TEXT_DARK_MUTED }}>Hier findest du Antworten auf die wichtigsten Fragen rund um den Unterricht.</p>
           </div>
           <FAQAccordion />
@@ -603,13 +605,13 @@ export default function Home() {
       </section>
 
       {/* -- 11. RentalCTA ---------------------------------------------- */}
-      <section className="py-8 px-6" style={{ background: LIGHT_ALT }}>
+      <section className="py-8 px-4 md:px-6 lg:px-8" style={{ background: LIGHT_ALT }}>
         <div className="max-w-6xl mx-auto">
           <a
             href="https://schlagzeugleihen.de"
             target="_blank"
             rel="noopener noreferrer"
-            className="group block rounded-2xl px-8 py-7 transition-all"
+            className="group block rounded-2xl px-6 md:px-8 py-6 md:py-7 transition-all"
             style={{ background: CARD_BG_FEATURED, border: `1px solid ${CARD_BORDER_ACCENT}` }}
           >
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
@@ -633,12 +635,12 @@ export default function Home() {
       </section>
 
       {/* -- 12. ContactForm -------------------------------------------- */}
-      <section id="kontakt" className="py-24" style={{ background: LIGHT }}>
-        <div className="max-w-4xl mx-auto px-6">
+      <section id="kontakt" className="py-16 md:py-24" style={{ background: LIGHT }}>
+        <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8">
           <ScrollReveal>
-          <div className="text-center mb-12">
+          <div className="text-center mb-10 md:mb-12">
             <p className="text-xs font-medium tracking-widest uppercase mb-4" style={{ color: ACCENT }}>Kontakt</p>
-            <h2 className="text-display-md font-semibold" style={{ color: TEXT_DARK }}>Probestunde anfragen</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-display-md font-semibold" style={{ color: TEXT_DARK }}>Probestunde anfragen</h2>
             <p className="text-sm mt-3" style={{ color: TEXT_DARK_MUTED }}>Kostenlos und unverbindlich. Ich melde mich innerhalb von 24 Stunden.</p>
           </div>
           </ScrollReveal>
@@ -677,7 +679,7 @@ export default function Home() {
             </div>
 
             {/* Contact form */}
-            <div className="md:col-span-3 rounded-2xl p-8" style={{ background: LIGHT_ALT, border: `1px solid ${CARD_BORDER}` }}>
+            <div className="md:col-span-3 rounded-2xl p-6 md:p-8" style={{ background: LIGHT_ALT, border: `1px solid ${CARD_BORDER}` }}>
               <ContactForm />
             </div>
           </div>
@@ -686,7 +688,7 @@ export default function Home() {
 
       {/* -- 13. Footer ------------------------------------------------- */}
       <footer className="py-10" style={{ background: LIGHT_ALT, borderTop: `1px solid rgba(255,255,255,0.08)` }}>
-        <div className="max-w-6xl mx-auto px-6" style={{ color: TEXT_DARK_MUTED }}>
+        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8" style={{ color: TEXT_DARK_MUTED }}>
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-sm">
             <div className="space-y-1">
               <p className="font-medium" style={{ color: TEXT_DARK }}>Manuel Büttner - Schlagzeuglehrer · Dein Partner für musikalischen Erfolg.</p>
