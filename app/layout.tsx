@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { IBM_Plex_Sans } from 'next/font/google'
 import '@/styles/globals.css'
 import CookieBanner from '@/app/components/CookieBanner'
+import Analytics from '@/app/components/Analytics'
 import Script from 'next/script'
 
 const ibmPlex = IBM_Plex_Sans({
@@ -71,6 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <Analytics />
         {children}
         <CookieBanner />
       </body>
