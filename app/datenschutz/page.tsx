@@ -66,8 +66,8 @@ export default function DatenschutzPage() {
             <p className="mb-4">
               Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu
               gewährleisten. Zur Reichweitenmessung setzen wir das cookielose, datensparsame
-              Analyse-Tool Umami ein (Details unter „Datenerfassung auf dieser Website"); darüber
-              hinaus kommen keine Tracking- oder Analyse-Tools zum Einsatz.
+              Analyse-Tool Umami ein; zusätzlich setzen wir nach Ihrer Einwilligung Google Analytics 4
+              ein (Details jeweils unter „Datenerfassung auf dieser Website").
             </p>
 
             <p className="font-medium text-white mb-1">Welche Rechte haben Sie bezüglich Ihrer Daten?</p>
@@ -258,10 +258,12 @@ export default function DatenschutzPage() {
 
             <h3 className="text-[#84A98C] font-medium text-sm mb-2">Cookies und lokaler Speicher</h3>
             <p className="mb-4">
-              Diese Website setzt keine Tracking-Cookies. Der Cookie-Hinweis-Banner speichert Ihre
-              Bestätigung ausschließlich im lokalen Speicher Ihres Browsers (localStorage). Dabei werden
-              keine personenbezogenen Daten erhoben oder an Dritte übermittelt. Der Eintrag im lokalen
-              Speicher kann jederzeit über die Browser-Einstellungen gelöscht werden.
+              Analyse-Cookies werden ausschließlich nach Ihrer Einwilligung durch Google Analytics
+              gesetzt (siehe „Google Analytics 4"). Ohne Ihre Zustimmung über das Cookie-Banner findet
+              kein cookiebasiertes Tracking statt. Ihre Banner-Entscheidung wird zu diesem Zweck im
+              lokalen Speicher Ihres Browsers (localStorage) gespeichert — dies ist technisch notwendig
+              und nach § 25 Abs. 2 TTDSG einwilligungsfrei. Der Eintrag kann jederzeit über die
+              Browser-Einstellungen gelöscht werden.
             </p>
 
             <h3 className="text-[#84A98C] font-medium text-sm mb-2 mt-6">Reichweitenmessung mit Umami</h3>
@@ -273,6 +275,29 @@ export default function DatenschutzPage() {
               personenbezogener Nutzerprofile. Es werden keine Daten an Dritte verkauft. Rechtsgrundlage
               ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer bedarfsgerechten Gestaltung
               der Website).
+            </p>
+
+            <h3 className="text-[#84A98C] font-medium text-sm mb-2 mt-6">Google Analytics 4 via Google Tag Manager (nur mit Einwilligung)</h3>
+            <p className="mb-4">
+              Ergänzend setzen wir nach Ihrer Einwilligung Google Analytics 4 (Mess-ID G-5Y3XKNYNJY)
+              ein, eingebunden über den Google Tag Manager (Container GTM-WBXP8DQZ). Anbieter ist die
+              Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Erst nach Klick auf
+              „Akzeptieren" im Cookie-Banner werden der Tag Manager und damit Google Analytics geladen
+              und Cookies gesetzt; ohne Einwilligung findet keine Analyse durch Google statt. Die
+              IP-Anonymisierung ist aktiv. Eine Übermittlung an die Google LLC in den USA kann
+              stattfinden; Google ist nach dem EU-US Data Privacy Framework (DPF) zertifiziert, ergänzend
+              bestehen EU-Standardvertragsklauseln (SCC) nach Art. 46 DSGVO. Rechtsgrundlage: Art. 6
+              Abs. 1 lit. a DSGVO i.&nbsp;V.&nbsp;m. § 25 Abs. 1 TTDSG (Einwilligung), jederzeit mit
+              Wirkung für die Zukunft widerrufbar. Speicherdauer: 14 Monate. Details:{' '}
+              <a
+                href="https://policies.google.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2"
+                style={{ color: '#84A98C' }}
+              >
+                https://policies.google.com/privacy
+              </a>
             </p>
 
             <h3 className="text-[#84A98C] font-medium text-sm mb-2 mt-6">Server-Log-Dateien</h3>
