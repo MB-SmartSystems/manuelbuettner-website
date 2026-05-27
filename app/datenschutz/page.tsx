@@ -65,7 +65,9 @@ export default function DatenschutzPage() {
             <p className="font-medium text-white mb-1">Wofür nutzen wir Ihre Daten?</p>
             <p className="mb-4">
               Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu
-              gewährleisten. Diese Website verwendet keine Tracking- oder Analyse-Tools.
+              gewährleisten. Zur Reichweitenmessung setzen wir das cookielose, datensparsame
+              Analyse-Tool Umami ein (Details unter „Datenerfassung auf dieser Website"); darüber
+              hinaus kommen keine Tracking- oder Analyse-Tools zum Einsatz.
             </p>
 
             <p className="font-medium text-white mb-1">Welche Rechte haben Sie bezüglich Ihrer Daten?</p>
@@ -260,6 +262,17 @@ export default function DatenschutzPage() {
               Bestätigung ausschließlich im lokalen Speicher Ihres Browsers (localStorage). Dabei werden
               keine personenbezogenen Daten erhoben oder an Dritte übermittelt. Der Eintrag im lokalen
               Speicher kann jederzeit über die Browser-Einstellungen gelöscht werden.
+            </p>
+
+            <h3 className="text-[#84A98C] font-medium text-sm mb-2 mt-6">Reichweitenmessung mit Umami</h3>
+            <p className="mb-4">
+              Zur statistischen Auswertung der Websitenutzung setzen wir Umami ein – ein cookieloses,
+              datensparsames Web-Analyse-Tool, das auf eigener Infrastruktur in der EU betrieben wird
+              (analytics.mb-smartsystems.de). Erfasst werden anonymisierte Nutzungsdaten (z.&nbsp;B.
+              aufgerufene Seiten, ungefähre Herkunft, Gerätetyp, Referrer) ohne Cookies und ohne Bildung
+              personenbezogener Nutzerprofile. Es werden keine Daten an Dritte verkauft. Rechtsgrundlage
+              ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer bedarfsgerechten Gestaltung
+              der Website).
             </p>
 
             <h3 className="text-[#84A98C] font-medium text-sm mb-2 mt-6">Server-Log-Dateien</h3>
