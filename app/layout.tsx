@@ -44,7 +44,7 @@ const jsonLd = {
   description:
     'Schlagzeug- und Klavierunterricht mit 29+ Jahren Erfahrung. Professionelle Ausbildung, strukturierte Lernlogik.',
   url: siteUrl,
-  telephone: '+4917036487890',
+  telephone: '+491703648789',
   email: 'info@manuelbuettner.de',
   address: {
     '@type': 'PostalAddress',
