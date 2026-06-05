@@ -16,11 +16,11 @@ const siteUrl = 'https://manuelbuettner.de'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Manuel Büttner — Schlagzeuglehrer in Alsbach-Hähnlein',
+    default: 'Schlagzeugunterricht & Drum Lessons in Alsbach-Hähnlein | Manuel Büttner',
     template: '%s | Manuel Büttner',
   },
   description:
-    'Schlagzeug- und Klavierunterricht mit 29+ Jahren Erfahrung. Professionelle Ausbildung, strukturierte Lernlogik. Kostenlose Probestunde.',
+    'Schlagzeugunterricht (Drum Lessons) für Kinder und Erwachsene in Alsbach-Hähnlein an der Bergstraße – 29+ Jahre Erfahrung, kostenlose Probestunde. Auch Klavierunterricht.',
   metadataBase: new URL(siteUrl),
   alternates: {
     canonical: siteUrl,
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     locale: 'de_DE',
     url: siteUrl,
     siteName: 'manuelbuettner.de',
-    title: 'Manuel Büttner — Schlagzeuglehrer in Alsbach-Hähnlein',
+    title: 'Schlagzeugunterricht & Drum Lessons in Alsbach-Hähnlein | Manuel Büttner',
     description:
-      'Schlagzeug- und Klavierunterricht mit 29+ Jahren Erfahrung. Professionelle Ausbildung, strukturierte Lernlogik. Kostenlose Probestunde.',
+      'Schlagzeugunterricht (Drum Lessons) für Kinder und Erwachsene in Alsbach-Hähnlein an der Bergstraße – 29+ Jahre Erfahrung, kostenlose Probestunde. Auch Klavierunterricht.',
   },
   robots: { index: true, follow: true },
 }
