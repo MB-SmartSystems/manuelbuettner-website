@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
+import nodemailer from 'nodemailer'
 
 export async function POST(req: NextRequest) {
   try {
@@ -10,11 +10,19 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Pflichtfelder fehlen.' }, { status: 400 })
     }
 
-    const resend = new Resend(process.env.RESEND_API_KEY)
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT || 587),
+      secure: false, // STARTTLS auf 587
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    })
 
-    const { error } = await resend.emails.send({
-      from: 'Kontaktformular <noreply@manuelbuettner.de>',
-      to: ['info@mb-webdesign.de'],
+    await transporter.sendMail({
+      from: `Kontaktformular <${process.env.SMTP_USER}>`,
+      to: process.env.CONTACT_TO || 'info@mb-webdesign.de',
       replyTo: email,
       subject: `Neue Anfrage von ${vorname} ${nachname}`,
       text: [
@@ -28,11 +36,6 @@ export async function POST(req: NextRequest) {
         `Zeitpunkt: ${new Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' })}`,
       ].join('\n'),
     })
-
-    if (error) {
-      console.error('[Contact Form] Resend error:', error)
-      return NextResponse.json({ error: 'E-Mail konnte nicht gesendet werden.' }, { status: 500 })
-    }
 
     return NextResponse.json({ success: true })
   } catch (err) {
