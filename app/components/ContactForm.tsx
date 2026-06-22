@@ -23,6 +23,10 @@ export default function ContactForm() {
         body: JSON.stringify(form),
       })
       if (res.ok) {
+        // Conversion-Tracking (Umami, cookielos): erfolgreich abgeschickte Anfrage
+        ;(window as unknown as {
+          umami?: { track: (event: string, data?: Record<string, unknown>) => void }
+        }).umami?.track('probestunde_angefragt')
         setStatus('success')
         setForm({ vorname: '', nachname: '', email: '', phone: '', anliegen: '', _hp: '' })
       } else {
