@@ -6,7 +6,7 @@ const ACCENT = '#52796F'
 const BASE = '#0a0a0a'
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ vorname: '', nachname: '', email: '', phone: '', anliegen: '' })
+  const [form, setForm] = useState({ vorname: '', nachname: '', email: '', phone: '', anliegen: '', _hp: '' })
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -24,7 +24,7 @@ export default function ContactForm() {
       })
       if (res.ok) {
         setStatus('success')
-        setForm({ vorname: '', nachname: '', email: '', phone: '', anliegen: '' })
+        setForm({ vorname: '', nachname: '', email: '', phone: '', anliegen: '', _hp: '' })
       } else {
         setStatus('error')
       }
@@ -52,6 +52,17 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      {/* Honeypot: Bots fuellen das aus, Menschen nicht. Versteckt + nicht tabbbar. */}
+      <input
+        type="text"
+        name="_hp"
+        value={form._hp}
+        onChange={handleChange}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }}
+      />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-xs mb-2 uppercase tracking-widest" style={{ color: ACCENT }}>Vorname *</label>
