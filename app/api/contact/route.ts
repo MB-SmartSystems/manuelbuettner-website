@@ -79,30 +79,33 @@ export async function POST(req: NextRequest) {
 
   const name = `${vorname} ${nachname}`
   const now = new Date()
-  const nowIso = now.toISOString()
 
-  // 1) SPEICHER ZUERST
+  // Quarantaene (Bot/Honeypot): NICHT in die Schuelerdatenbank schreiben (kein Bot-Muell
+  // im Schuelerstamm), KEINE Benachrichtigung, dem Bot "Erfolg" zeigen.
+  if (quarantine) {
+    return NextResponse.json({ success: true })
+  }
+
+  // 1) SPEICHER ZUERST — Schuelerdatenbank (Tabelle 831). Das Formular erfasst den
+  //    Anfragenden (oft ein Elternteil); Schuelername/-alter stehen frei im Anliegen-Text
+  //    (-> Groesster_Bedarf), Manuel vervollstaendigt den Datensatz bei der Bearbeitung.
   let stored = false
   try {
     await storeLead({
-      Name: name,
-      Email: email,
-      Telefon: phone || '',
-      Nachricht: anliegen,
-      Quelle: QUELLE,
-      Status: 'Neu',
-      Quarantaene: quarantine,
-      Eingang: nowIso,
-      Raw_Payload: JSON.stringify(body),
+      Vorname: vorname,
+      Nachname: nachname,
+      Ansprechpartner_Name: name,
+      Email_Ansprechpartner: email,
+      Handynummer_Ansprechpartner: phone || '',
+      'Größter_Bedarf': anliegen,
+      Unterrichtsmodell: 'Anfrage für Probeunterricht',
+      Anfrage_Status: 'Anfrage über Website',
+      Kanal: 'Website',
+      Schueler_Status: 'Anfrage',
     })
     stored = true
   } catch (e) {
     console.error('[contact] Baserow-Speicher fehlgeschlagen:', e)
-  }
-
-  // Quarantaene (Bot): gespeichert+markiert, KEINE Benachrichtigung, dem Bot "Erfolg" zeigen.
-  if (quarantine) {
-    return NextResponse.json({ success: true })
   }
 
   // 2) BENACHRICHTIGEN (E-Mail + Telegram). Bei Speicher-Fehler tragen diese die volle
