@@ -557,9 +557,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* -- 9. TrialProcess -------------------------------------------- */}
-      <section className="py-16 md:py-24" style={{ background: LIGHT_ALT }}>
-        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      {/* -- 9. TrialProcess --- PARALLAX-Hintergrund (rückgängig: diesen Commit reverten) -- */}
+      <section
+        className="relative py-16 md:py-24 bg-scroll md:bg-fixed bg-cover bg-center"
+        style={{
+          backgroundColor: LIGHT_ALT,
+          backgroundImage: `linear-gradient(rgba(10,10,10,0.82), rgba(10,10,10,0.88)), url('/probestunde-bg.jpg')`,
+        }}
+      >
+        <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           <ScrollReveal>
           <div className="text-center mb-10 md:mb-16">
             <p className="text-xs font-medium tracking-widest uppercase mb-4" style={{ color: ACCENT }}>DEINE CHANCE</p>
