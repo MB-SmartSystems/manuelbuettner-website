@@ -16,7 +16,7 @@ const valueProps = [
 const pillars = [
   {
     title: 'Fokus auf das, was dich am meisten voran bringt',
-    desc: 'Ich richte den Schlagzeugunterricht nach deinem aktuellen Level aus und wir arbeiten gezielt an den Punkten, die dich am meisten bremsen. So erreichst du deine Ziele schneller und machst spürbare technische Fortschritte.',
+    desc: 'Ich richte den Unterricht nach deinem Level aus und arbeite gezielt an dem, was dich bremst – für schnellere, spürbare Fortschritte.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.5" />
@@ -27,7 +27,7 @@ const pillars = [
   },
   {
     title: 'Verständliche Erklärungen',
-    desc: 'Ich erkläre jede Übung so, dass du genau verstehst, warum sie funktioniert und wie du sie richtig anwendest – klar, logisch und sofort nutzbar für deine Ziele.',
+    desc: 'Ich erkläre jede Übung so, dass du verstehst, warum sie funktioniert und wie du sie anwendest – klar, logisch und sofort nutzbar.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
@@ -38,7 +38,7 @@ const pillars = [
   },
   {
     title: 'Individuelle Ziele',
-    desc: 'Ob Band, Songs, Technik oder freies Spiel: Der Unterricht richtet sich klar nach deinen persönlichen Zielen aus. So erreichst du zuverlässig das, was du dir vorgenommen hast – egal ob Anfänger oder Fortgeschrittener.',
+    desc: 'Ob Band, Songs, Technik oder freies Spiel: Der Unterricht richtet sich nach deinen Zielen – egal ob Anfänger oder Fortgeschrittener.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="currentColor" strokeWidth="1.5" />
@@ -88,7 +88,7 @@ const courses = [
 const pricing = [
   {
     title: 'Schlagzeug für Anfänger (30 Min.)',
-    desc: 'Perfekt für alle, die Schlagzeug ausprobieren möchten oder einen einfachen, klar strukturierten Einstieg suchen. Wir starten mit leichten Beats, bauen erste Grundlagen auf und sorgen dafür, dass du schon in der ersten Stunde ein echtes Erfolgserlebnis hast.',
+    desc: 'Der klar strukturierte Einstieg ins Schlagzeug – mit ersten Beats und einem echten Erfolgserlebnis ab der ersten Stunde.',
     price: '86',
     billingNote: 'Monatliche Abrechnung · Vertrag',
     durationNote: '1× 30 Min. Unterricht pro Woche',
@@ -101,7 +101,7 @@ const pricing = [
   },
   {
     title: 'Schlagzeug für Erfahrene (45 Min.)',
-    desc: 'Ideal für Spieler, die bereits Grundlagen sicher beherrschen und spürbar weiterkommen wollen. Wir vertiefen Technik, Timing, Grooves und Songs – gezielt, strukturiert und abgestimmt auf dein Level. Mehr Zeit, mehr Fokus, mehr Fortschritt.',
+    desc: 'Für Spieler mit sicheren Grundlagen, die weiterkommen wollen: mehr Zeit für Technik, Timing, Grooves und Songs.',
     price: '129',
     billingNote: 'Monatliche Abrechnung · Vertrag',
     durationNote: '1× 45 Min. Unterricht pro Woche',
@@ -114,20 +114,19 @@ const pricing = [
   },
   {
     title: 'Schlagzeug für Fortgeschrittene (60 Min.)',
-    desc: 'Für Drummer, die gezielt an Technik, Timing, Präzision und anspruchsvolleren Songs arbeiten möchten. Ideal, um Fähigkeiten weiter auszubauen, komplexe Grooves sicher zu beherrschen und den eigenen Standard spürbar anzuheben.',
+    desc: 'Für Drummer, die an Technik, Präzision und anspruchsvollen Songs arbeiten und ihren Standard hörbar anheben wollen.',
     price: '172',
     billingNote: 'Monatliche Abrechnung · Vertrag',
     durationNote: '1× 60 Min. Unterricht pro Woche',
     features: [
       'Anspruchsvolle Grooves, Fills und Songteile sauber erarbeiten',
       'Übungen, die Technik, Kontrolle und Timing hörbar verbessern',
-      'Tipps für Bandspiel & Entwicklung eines eigenen, sicheren Stils',
-      'Anleitung zum selbstständigen Erarbeiten von Songs in jedem Level',
+      'Tipps für Bandspiel & einen eigenen, sicheren Stil',
     ],
   },
   {
     title: 'Klavier für Anfänger',
-    desc: 'Für Anfänger, Kinder und Erwachsene, die Klavier ohne den starren Klassikunterricht lernen möchten. Du bekommst einen klaren, praxisnahen Unterricht, der dich sicher ans Klavier spielen heranführt. Wir verbinden Noten, Akkorde und Technik so, dass du schnell Fortschritte machst und deine ersten Lieder souverän begleiten kannst.',
+    desc: 'Klavier ohne starren Klassikunterricht – Noten, Akkorde und Technik praxisnah für deine ersten Lieder.',
     price: '86',
     billingNote: 'Monatliche Abrechnung · Vertrag',
     durationNote: '1× 30 Min. Unterricht pro Woche',
@@ -149,17 +148,17 @@ const steps = [
   {
     num: '1',
     title: 'Persönliches Kennenlernen',
-    desc: 'Wir schauen uns an, wo du aktuell stehst – ob fortgeschritten mit klaren Technik- oder Timing-Zielen oder kompletter Anfänger. Du sagst mir, welche Ziele du im Unterricht erreichen möchtest, und ich zeige dir, wie wir dorthin kommen.',
+    desc: 'Wir schauen, wo du stehst – ob Anfänger oder fortgeschritten mit klaren Technik- und Timing-Zielen. Du sagst mir deine Ziele, ich zeige dir den Weg dahin.',
   },
   {
     num: '2',
     title: 'Direkter Einstieg am Set',
-    desc: 'Fortgeschrittene bekommen eine kompakte Analyse eines Grooves, Fills oder Timing-Themas – inklusive sofort umsetzbarer Verbesserungen, die dich spürbar voranbringen. Anfänger spielen ihren ersten Beat oder ihre ersten Noten, damit sie gleich ein Gefühl für das Instrument entwickeln.',
+    desc: 'Fortgeschrittene bekommen eine kompakte Analyse zu Groove, Fill oder Timing mit sofort umsetzbaren Tipps. Anfänger spielen ihren ersten Beat und bekommen ein Gefühl fürs Instrument.',
   },
   {
     num: '3',
     title: 'Dein weiterer Fortschritt',
-    desc: 'Nach der Probestunde hast du zwei Möglichkeiten: Entweder wir starten gemeinsam im wöchentlichen Unterricht und arbeiten kontinuierlich an deinen Zielen. Oder du entscheidest dich für eine 2-, 5- oder 10-Stunden-Karte, die du flexibel nach deinem eigenen Zeitplan nutzen kannst – ideal, wenn du variable Zeiten brauchst.',
+    desc: 'Danach hast du die Wahl: wöchentlicher Unterricht für kontinuierlichen Fortschritt – oder eine flexible 2-, 5- oder 10-Stunden-Karte für variable Zeiten.',
   },
 ]
 
@@ -338,13 +337,13 @@ export default function Home() {
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {pillars.map((p, i) => (
-              <ScrollReveal key={i} delay={i * 150}>
+              <ScrollReveal key={i} delay={i * 150} className="h-full">
               <div
-                className="rounded-2xl p-6 md:p-8 transition-all group"
+                className="h-full rounded-2xl p-6 md:p-8 transition-all group"
                 style={{ background: CARD_BG_ALT, border: `1px solid ${CARD_BORDER}` }}
               >
                 <div className="mb-5 inline-block" style={{ color: ACCENT }}>{p.icon}</div>
-                <h3 className="font-semibold text-lg mb-3" style={{ color: TEXT_DARK }}>{p.title}</h3>
+                <h3 className="font-semibold text-lg mb-3 md:min-h-[3.5rem] flex items-start" style={{ color: TEXT_DARK }}>{p.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: TEXT_DARK_MUTED }}>{p.desc}</p>
               </div>
               </ScrollReveal>
@@ -364,9 +363,9 @@ export default function Home() {
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {courses.map((c, i) => (
-              <ScrollReveal key={i} delay={i * 150}>
+              <ScrollReveal key={i} delay={i * 150} className="h-full">
               <div
-                className="relative rounded-2xl p-6 md:p-8 transition-all"
+                className="relative h-full flex flex-col rounded-2xl p-6 md:p-8 transition-all"
                 style={{
                   background: c.featured ? CARD_BG_FEATURED : CARD_BG_LIGHT,
                   border: c.featured ? `1px solid ${CARD_BORDER_ACCENT}` : `1px solid ${CARD_BORDER}`,
@@ -378,10 +377,10 @@ export default function Home() {
                     Beliebt
                   </span>
                 )}
-                <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full mb-5" style={{ color: ACCENT, background: 'rgba(82,121,111,0.10)', border: `1px solid rgba(82,121,111,0.25)` }}>
+                <span className="inline-block self-start text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full mb-5" style={{ color: ACCENT, background: 'rgba(82,121,111,0.10)', border: `1px solid rgba(82,121,111,0.25)` }}>
                   {c.tag}
                 </span>
-                <h3 className="font-semibold text-xl mb-3" style={{ color: TEXT_DARK }}>{c.title}</h3>
+                <h3 className="font-semibold text-xl mb-3 md:min-h-[3.5rem] flex items-start" style={{ color: TEXT_DARK }}>{c.title}</h3>
                 <p className="text-sm leading-relaxed mb-5" style={{ color: TEXT_DARK_MUTED }}>{c.desc}</p>
                 <p className="text-xs font-medium uppercase tracking-widest mb-3" style={{ color: TEXT_DARK_SUBTLE }}>Was dich erwartet:</p>
                 <ul className="space-y-2 mb-6">
@@ -394,7 +393,7 @@ export default function Home() {
                 </ul>
                 <a
                   href="#kontakt"
-                  className="text-sm font-medium underline underline-offset-4 inline-flex items-center gap-1"
+                  className="mt-auto text-sm font-medium underline underline-offset-4 inline-flex items-center gap-1 self-start"
                   style={{ color: ACCENT }}
                 >
                   Jetzt Probestunde vereinbaren →
@@ -419,17 +418,17 @@ export default function Home() {
           {/* Monthly plans */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-12">
             {pricing.map((p, i) => (
-              <ScrollReveal key={i} delay={i * 100}>
+              <ScrollReveal key={i} delay={i * 100} className="h-full">
               <div
-                className="rounded-2xl p-6 transition-all flex flex-col"
+                className="h-full rounded-2xl p-6 transition-all flex flex-col"
                 style={{
                   background: p.featured ? CARD_BG_FEATURED : CARD_BG_ALT,
                   border: p.featured ? `1px solid ${CARD_BORDER_ACCENT}` : `1px solid ${CARD_BORDER}`,
                   boxShadow: p.featured ? `0 4px 20px rgba(82,121,111,0.15)` : 'none',
                 }}
               >
-                <p className="font-semibold text-sm mb-1" style={{ color: TEXT_DARK }}>{p.title}</p>
-                <p className="text-xs leading-relaxed mb-4" style={{ color: TEXT_DARK_MUTED }}>{p.desc}</p>
+                <p className="font-semibold text-sm mb-1 sm:min-h-[2.5rem] flex items-start" style={{ color: TEXT_DARK }}>{p.title}</p>
+                <p className="text-xs leading-relaxed mb-4 sm:min-h-[4rem]" style={{ color: TEXT_DARK_MUTED }}>{p.desc}</p>
 
                 <div className="flex items-baseline gap-1 mb-2">
                   <span className="text-3xl font-semibold" style={{ color: ACCENT }}>€{p.price}</span>
@@ -575,7 +574,7 @@ export default function Home() {
                   <span className="font-semibold text-xl tracking-tight" style={{ color: ACCENT }}>{s.num}</span>
                 </div>
                 <h3 className="font-semibold text-lg" style={{ color: TEXT_DARK }}>{s.title}</h3>
-                <p className="text-sm leading-relaxed max-w-xs mx-auto" style={{ color: TEXT_DARK_MUTED }}>{s.desc}</p>
+                <p className="text-sm leading-relaxed max-w-xs mx-auto md:min-h-[6rem]" style={{ color: TEXT_DARK_MUTED }}>{s.desc}</p>
               </div>
               </ScrollReveal>
             ))}
